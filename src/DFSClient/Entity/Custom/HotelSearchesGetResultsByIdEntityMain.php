@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\HotelSearchesGetResultsByIdEntityMainTasks;
 
-class HotelSearchesGetResultsByIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class HotelSearchesGetResultsByIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class HotelSearchesGetResultsByIdEntityMain extends \DFSClientV3\Models\Response
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\HotelSearchesGetResultsByIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return HotelSearchesGetResultsByIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

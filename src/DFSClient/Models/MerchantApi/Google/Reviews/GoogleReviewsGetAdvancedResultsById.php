@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\MerchantApi\Google\Reviews;
 
 
+use DFSClientV3\Entity\Custom\GoogleReviewsGetAdvancedResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleReviewsGetAdvancedResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class GoogleReviewsGetAdvancedResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\GoogleReviewsGetAdvancedResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\GoogleReviewsGetAdvancedResultsByIdEntityMain
+  * @return GoogleReviewsGetAdvancedResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): GoogleReviewsGetAdvancedResultsByIdEntityMain
 	{
 		return parent::get();
 	}

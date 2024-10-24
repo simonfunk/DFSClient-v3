@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BulkKeywordDifficultyLiveEntityMainTasks;
 
-class BulkKeywordDifficultyLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BulkKeywordDifficultyLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BulkKeywordDifficultyLiveEntityMain extends \DFSClientV3\Models\ResponseMo
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BulkKeywordDifficultyLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return BulkKeywordDifficultyLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

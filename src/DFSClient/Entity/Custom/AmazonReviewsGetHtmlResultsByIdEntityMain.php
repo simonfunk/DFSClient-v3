@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AmazonReviewsGetHtmlResultsByIdEntityMainTasks;
 
-class AmazonReviewsGetHtmlResultsByIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AmazonReviewsGetHtmlResultsByIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AmazonReviewsGetHtmlResultsByIdEntityMain extends \DFSClientV3\Models\Resp
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AmazonReviewsGetHtmlResultsByIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AmazonReviewsGetHtmlResultsByIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

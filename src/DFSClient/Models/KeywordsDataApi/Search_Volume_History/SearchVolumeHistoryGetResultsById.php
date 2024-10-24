@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Search_Volume_History;
 
+use DFSClientV3\Entity\Custom\SearchVolumeHistoryGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class SearchVolumeHistoryGetResultsById extends AbstractModel
@@ -35,9 +36,10 @@ class SearchVolumeHistoryGetResultsById extends AbstractModel
     }
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\SearchVolumeHistoryGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\SearchVolumeHistoryGetResultsByIdEntityMain
+  * @return SearchVolumeHistoryGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): SearchVolumeHistoryGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

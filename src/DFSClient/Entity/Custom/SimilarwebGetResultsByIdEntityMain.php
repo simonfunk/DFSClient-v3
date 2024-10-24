@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\SimilarwebGetResultsByIdEntityMainTasks;
 
-class SimilarwebGetResultsByIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class SimilarwebGetResultsByIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class SimilarwebGetResultsByIdEntityMain extends \DFSClientV3\Models\ResponseMod
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\SimilarwebGetResultsByIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return SimilarwebGetResultsByIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

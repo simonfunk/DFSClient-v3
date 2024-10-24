@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Google_Ads;
 
 
+use DFSClientV3\Entity\Custom\GoogleAdsLanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleAdsLanguages extends AbstractModel
@@ -25,9 +26,10 @@ class GoogleAdsLanguages extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleAdsLanguagesEntityMain
+     * @return GoogleAdsLanguagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleAdsLanguagesEntityMain
+    #[\Override]
+    public function get(): GoogleAdsLanguagesEntityMain
     {
         return parent::get();
     }

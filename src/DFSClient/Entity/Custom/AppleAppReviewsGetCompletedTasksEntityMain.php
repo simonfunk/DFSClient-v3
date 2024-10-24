@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AppleAppReviewsGetCompletedTasksEntityMainTasks;
 
-class AppleAppReviewsGetCompletedTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AppleAppReviewsGetCompletedTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AppleAppReviewsGetCompletedTasksEntityMain extends \DFSClientV3\Models\Res
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AppleAppReviewsGetCompletedTasksEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AppleAppReviewsGetCompletedTasksEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

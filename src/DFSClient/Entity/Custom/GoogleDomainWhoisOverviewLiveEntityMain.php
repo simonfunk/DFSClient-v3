@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleDomainWhoisOverviewLiveEntityMainTasks;
 
-class GoogleDomainWhoisOverviewLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleDomainWhoisOverviewLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleDomainWhoisOverviewLiveEntityMain extends \DFSClientV3\Models\Respon
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleDomainWhoisOverviewLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleDomainWhoisOverviewLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

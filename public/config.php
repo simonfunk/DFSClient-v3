@@ -1,5 +1,9 @@
 <?php
 
+use DFSClientV3\Services\Logger\Drivers\InternalDriver;
+use DFSClientV3\Services\Logger\Notifications\FileNotification;
+use DFSClientV3\Services\Logger\Message\LoggerMessage;
+
 return $config = [
 
     'DATAFORSEO_LOGIN'       => 'login',
@@ -41,12 +45,12 @@ return $config = [
         'run' => false, // switch_on = true, switch_off = false
 
         // driver for laravel queue system - LaravelQueueDriver::class
-        'driver' => \DFSClientV3\Services\Logger\Drivers\InternalDriver::class,
+        'driver' => InternalDriver::class,
         'notificationDrivers' => [
-            \DFSClientV3\Services\Logger\Notifications\FileNotification::class,
+            FileNotification::class,
             //  \DFSClientV3\Services\Logger\Informers\SlackNotification::class
         ],
-        'messageClass' => \DFSClientV3\Services\Logger\Message\LoggerMessage::class,
+        'messageClass' => LoggerMessage::class,
         'logFilePath'  => 'C:\OSPanel\domains\dfs-v3\public\testLog'
     ]
 ];

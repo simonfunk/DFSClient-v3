@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AmazonAsinGetAdvancedResultsByIdEntityMainTasks;
 
-class AmazonAsinGetAdvancedResultsByIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AmazonAsinGetAdvancedResultsByIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AmazonAsinGetAdvancedResultsByIdEntityMain extends \DFSClientV3\Models\Res
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AmazonAsinGetAdvancedResultsByIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AmazonAsinGetAdvancedResultsByIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

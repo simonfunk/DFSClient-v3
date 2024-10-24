@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleKeywordSuggestionsLiveEntityMainTasks;
 
-class GoogleKeywordSuggestionsLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleKeywordSuggestionsLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleKeywordSuggestionsLiveEntityMain extends \DFSClientV3\Models\Respons
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleKeywordSuggestionsLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleKeywordSuggestionsLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

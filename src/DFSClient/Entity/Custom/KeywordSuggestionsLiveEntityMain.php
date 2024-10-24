@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\KeywordSuggestionsLiveEntityMainTasks;
 
-class KeywordSuggestionsLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class KeywordSuggestionsLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class KeywordSuggestionsLiveEntityMain extends \DFSClientV3\Models\ResponseModel
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\KeywordSuggestionsLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return KeywordSuggestionsLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

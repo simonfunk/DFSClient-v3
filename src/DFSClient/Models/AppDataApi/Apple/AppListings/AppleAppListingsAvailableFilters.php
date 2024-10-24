@@ -16,7 +16,8 @@ class AppleAppListingsAvailableFilters extends AbstractModel {
 	/**
 	 * @return AppleAppListingsAvailableFiltersEntityMain
 	 */
-	public function get(): AppleAppListingsAvailableFiltersEntityMain {
+	#[\Override]
+ public function get(): AppleAppListingsAvailableFiltersEntityMain {
 		return parent::get();
 	}
 }

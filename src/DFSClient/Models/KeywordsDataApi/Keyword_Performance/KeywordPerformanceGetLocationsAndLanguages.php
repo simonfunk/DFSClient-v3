@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Keyword_Performance;
 
 
+use DFSClientV3\Entity\Custom\KeywordPerformanceGetLocationsAndLanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordPerformanceGetLocationsAndLanguages extends AbstractModel
@@ -25,9 +26,10 @@ class KeywordPerformanceGetLocationsAndLanguages extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\KeywordPerformanceGetLocationsAndLanguagesEntityMain
+     * @return KeywordPerformanceGetLocationsAndLanguagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\KeywordPerformanceGetLocationsAndLanguagesEntityMain
+    #[\Override]
+    public function get(): KeywordPerformanceGetLocationsAndLanguagesEntityMain
     {
         return parent::get();
     }

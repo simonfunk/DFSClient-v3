@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleHistoricalBulkTrafficEstimationLiveEntityMainTasks;
 
-class GoogleHistoricalBulkTrafficEstimationLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleHistoricalBulkTrafficEstimationLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleHistoricalBulkTrafficEstimationLiveEntityMain extends \DFSClientV3\M
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleHistoricalBulkTrafficEstimationLiveEntityMainTasksResult|null
-	*/
-	public function getResultsByPostID($postID): ?\DFSClientV3\Entity\Custom\GoogleHistoricalBulkTrafficEstimationLiveEntityMainTasksResult {
+  * @return GoogleHistoricalBulkTrafficEstimationLiveEntityMainTasksResult|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?GoogleHistoricalBulkTrafficEstimationLiveEntityMainTasksResult {
 		return parent::getResultsByPostID($postID);
 	}
 }

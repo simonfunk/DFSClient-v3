@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\BusinessDataApi\Google\BusinessUpdates;
 
 
+use DFSClientV3\Entity\Custom\BusinessUpdatesGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class BusinessUpdatesGetResultsById extends AbstractModel
@@ -35,9 +36,10 @@ class BusinessUpdatesGetResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\BusinessUpdatesGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\BusinessUpdatesGetResultsByIdEntityMain
+  * @return BusinessUpdatesGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): BusinessUpdatesGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

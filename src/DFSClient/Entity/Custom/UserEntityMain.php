@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\UserEntityMainTasks;
 
-class UserEntityMain extends \DFSClientV3\Models\ResponseModel 
+class UserEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class UserEntityMain extends \DFSClientV3\Models\ResponseModel
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\UserEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return UserEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

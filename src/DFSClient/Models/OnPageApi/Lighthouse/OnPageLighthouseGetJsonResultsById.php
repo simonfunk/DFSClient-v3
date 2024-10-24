@@ -3,6 +3,7 @@
 
 namespace DFSClientV3\Models\OnPageApi\Lighthouse;
 
+use DFSClientV3\Entity\Custom\OnPageLighthouseGetJsonResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class OnPageLighthouseGetJsonResultsById extends AbstractModel
@@ -27,7 +28,8 @@ class OnPageLighthouseGetJsonResultsById extends AbstractModel
 	/**
 	 * @return \DFSClientV3\Entity\Custom\OnPageLighthouseGetJsonResultsByIdEntityMain
 	 */
-	public function get(): \DFSClientV3\Entity\Custom\OnPageLighthouseGetJsonResultsByIdEntityMain
+	#[\Override]
+ public function get(): OnPageLighthouseGetJsonResultsByIdEntityMain
 	{
 		return parent::get();
 	}

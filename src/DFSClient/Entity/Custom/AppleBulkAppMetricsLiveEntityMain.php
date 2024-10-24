@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AppleBulkAppMetricsLiveEntityMainTasks;
 
-class AppleBulkAppMetricsLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AppleBulkAppMetricsLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AppleBulkAppMetricsLiveEntityMain extends \DFSClientV3\Models\ResponseMode
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AppleBulkAppMetricsLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AppleBulkAppMetricsLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

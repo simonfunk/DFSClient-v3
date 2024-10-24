@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\OnPageGetPagesEntityMainTasks;
 
-class OnPageGetPagesEntityMain extends \DFSClientV3\Models\ResponseModel 
+class OnPageGetPagesEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class OnPageGetPagesEntityMain extends \DFSClientV3\Models\ResponseModel
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\OnPageGetPagesEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return OnPageGetPagesEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

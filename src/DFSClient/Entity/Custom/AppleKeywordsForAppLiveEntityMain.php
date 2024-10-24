@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AppleKeywordsForAppLiveEntityMainTasks;
 
-class AppleKeywordsForAppLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AppleKeywordsForAppLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AppleKeywordsForAppLiveEntityMain extends \DFSClientV3\Models\ResponseMode
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AppleKeywordsForAppLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AppleKeywordsForAppLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

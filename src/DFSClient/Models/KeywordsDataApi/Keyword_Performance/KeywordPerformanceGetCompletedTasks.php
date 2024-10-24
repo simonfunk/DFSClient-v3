@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Keyword_Performance;
 
+use DFSClientV3\Entity\Custom\KeywordPerformanceGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordPerformanceGetCompletedTasks extends AbstractModel
@@ -25,7 +26,8 @@ class KeywordPerformanceGetCompletedTasks extends AbstractModel
     /**
      * @return \DFSClientV3\Entity\Custom\KeywordPerformanceGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\KeywordPerformanceGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): KeywordPerformanceGetCompletedTasksEntityMain
     {
         return parent::get();
     }

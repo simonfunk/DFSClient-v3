@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\OnPageLighthouseSetTaskEntityMainTasks;
 
-class OnPageLighthouseSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class OnPageLighthouseSetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class OnPageLighthouseSetTaskEntityMain extends \DFSClientV3\Models\ResponseMode
 	/**
 	* @return \DFSClientV3\Entity\Custom\OnPageLighthouseSetTaskEntityMainTasksResult|null
 	*/
-	public function getResultsByPostID($postID): ?\DFSClientV3\Entity\Custom\OnPageLighthouseSetTaskEntityMainTasksResult {
+	#[\Override]
+ public function getResultsByPostID($postID): ?OnPageLighthouseSetTaskEntityMainTasksResult {
 		return parent::getResultsByPostID($postID);
 	}
 }

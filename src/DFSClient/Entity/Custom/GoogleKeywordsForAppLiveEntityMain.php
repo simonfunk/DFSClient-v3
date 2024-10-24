@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleKeywordsForAppLiveEntityMainTasks;
 
-class GoogleKeywordsForAppLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleKeywordsForAppLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleKeywordsForAppLiveEntityMain extends \DFSClientV3\Models\ResponseMod
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleKeywordsForAppLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleKeywordsForAppLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

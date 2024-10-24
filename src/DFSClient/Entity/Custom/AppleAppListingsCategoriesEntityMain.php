@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AppleAppListingsCategoriesEntityMainTasks;
 
-class AppleAppListingsCategoriesEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AppleAppListingsCategoriesEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AppleAppListingsCategoriesEntityMain extends \DFSClientV3\Models\ResponseM
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AppleAppListingsCategoriesEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AppleAppListingsCategoriesEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

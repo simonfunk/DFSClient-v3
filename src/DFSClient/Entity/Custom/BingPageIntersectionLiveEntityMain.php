@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BingPageIntersectionLiveEntityMainTasks;
 
-class BingPageIntersectionLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BingPageIntersectionLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BingPageIntersectionLiveEntityMain extends \DFSClientV3\Models\ResponseMod
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BingPageIntersectionLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return BingPageIntersectionLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

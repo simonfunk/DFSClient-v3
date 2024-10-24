@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Search_Volume_History;
 
 
+use DFSClientV3\Entity\Custom\SearchVolumeHistoryGetLocationsAndLanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class SearchVolumeHistoryGetLocationsAndLanguages extends AbstractModel
@@ -26,9 +27,10 @@ class SearchVolumeHistoryGetLocationsAndLanguages extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\SearchVolumeHistoryGetLocationsAndLanguagesEntityMain
+     * @return SearchVolumeHistoryGetLocationsAndLanguagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\SearchVolumeHistoryGetLocationsAndLanguagesEntityMain
+    #[\Override]
+    public function get(): SearchVolumeHistoryGetLocationsAndLanguagesEntityMain
     {
         return parent::get();
     }

@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\DataforseoTrendsSubregionInterestsLiveEntityMainTasks;
 
-class DataforseoTrendsSubregionInterestsLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class DataforseoTrendsSubregionInterestsLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class DataforseoTrendsSubregionInterestsLiveEntityMain extends \DFSClientV3\Mode
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\DataforseoTrendsSubregionInterestsLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return DataforseoTrendsSubregionInterestsLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

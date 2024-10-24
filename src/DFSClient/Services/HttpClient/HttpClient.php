@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Services\HttpClient;
 
+use function GuzzleHttp\Promise\settle;
 use DFSClientV3\Bootstrap\Application;
 use DFSClientV3\Services\HttpClient\Contracts\HttpContract;
 use DFSClientV3\Services\HttpClient\Handlers\Responses;
@@ -17,8 +18,6 @@ class HttpClient implements HttpContract
      */
     private $client;
 
-    public $typeResponse = '.gzip';
-
     /**
      * Create a new HttpClient instance
      * This Class is using Guzzle/Http.
@@ -32,19 +31,17 @@ class HttpClient implements HttpContract
      *
      * @return void
      */
-    public function __construct($base_url, $apiVersion, $timeout, $login, $password, $typeResponse = null)
+    public function __construct($base_url, $apiVersion, $timeout, $login, $password, public $typeResponse = null)
     {
         $config = Application::getInstance()->getConfig();
-
-        $this->typeResponse = $typeResponse;
         $this->client = new GuzzleClient([
             // if env is exist use env variable,else ''
-            'base_uri'  => (($base_url) ? $base_url : $config['url'])
-                         .(($apiVersion) ? $apiVersion : $config['apiVersion']),
+            'base_uri'  => ($base_url ?: $config['url'])
+                         .($apiVersion ?: $config['apiVersion']),
 
-            'timeout'   => ($timeout) ? $timeout : $config['timeoutForEachRequests'],
+            'timeout'   => $timeout ?: $config['timeoutForEachRequests'],
             'auth'      => [
-                ($login) ? $login : $config['DATAFORSEO_LOGIN'],
+                $login ?: $config['DATAFORSEO_LOGIN'],
                 ($login) ? $password : $config['DATAFORSEO_PASSWORD'],
             ],
         ]);
@@ -57,6 +54,7 @@ class HttpClient implements HttpContract
      *
      * @return \Handlers\Responses
      */
+    #[\Override]
     public function sendSingleRequest($method, $url, $params): Responses
     {
         $result = null;
@@ -105,6 +103,7 @@ class HttpClient implements HttpContract
      *
      * @return array
      */
+    #[\Override]
     public function sendAsyncRequests(array $args, $someData):array
     {
 
@@ -117,12 +116,12 @@ class HttpClient implements HttpContract
         foreach ($args as $key=>$arg) {
             // checking variable from args array
             if (isset($arg['method']) and isset($arg['url'])) {
-                $promises[$key] = $this->client->requestAsync($arg['method'], $arg['url'].$this->typeResponse, (isset($arg['params'])) ? $arg['params'] : []);
+                $promises[$key] = $this->client->requestAsync($arg['method'], $arg['url'].$this->typeResponse, $arg['params'] ?? []);
             }
         }
 
         // waiting and processing requests
-        $waitingFinish = Promise\settle($promises)->wait();
+        $waitingFinish = settle($promises)->wait();
 
         //creating results array
         foreach ($waitingFinish as $key=>$finished) {

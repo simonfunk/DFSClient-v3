@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BackLinksDomainIntersectionEntityMainTasks;
 
-class BackLinksDomainIntersectionEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BackLinksDomainIntersectionEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BackLinksDomainIntersectionEntityMain extends \DFSClientV3\Models\Response
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BackLinksDomainIntersectionEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return BackLinksDomainIntersectionEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\DataForSeo_Trends;
 
 
+use DFSClientV3\Entity\Custom\DataforseoTrendsLocationsEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class DataforseoTrendsLocations extends AbstractModel
@@ -25,9 +26,10 @@ class DataforseoTrendsLocations extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\DataforseoTrendsLocationsEntityMain
+     * @return DataforseoTrendsLocationsEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\DataforseoTrendsLocationsEntityMain
+    #[\Override]
+    public function get(): DataforseoTrendsLocationsEntityMain
     {
         return parent::get();
     }

@@ -48,6 +48,7 @@ class OnPageMicrodata extends AbstractModel
     /**
      * @return OnPageMicrodataEntityMain
      */
+    #[\Override]
     public function get() : OnPageMicrodataEntityMain
     {
         return parent::get();

@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Keyword_Suggestions_For_Url;
 
+use DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordSuggestionsForUrlGetCompletedTasks extends AbstractModel
@@ -24,9 +25,10 @@ class KeywordSuggestionsForUrlGetCompletedTasks extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlGetCompletedTasksEntityMain
+     * @return KeywordSuggestionsForUrlGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): KeywordSuggestionsForUrlGetCompletedTasksEntityMain
     {
         return parent::get();
     }

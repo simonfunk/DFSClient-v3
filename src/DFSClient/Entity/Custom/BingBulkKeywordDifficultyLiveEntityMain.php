@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BingBulkKeywordDifficultyLiveEntityMainTasks;
 
-class BingBulkKeywordDifficultyLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BingBulkKeywordDifficultyLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BingBulkKeywordDifficultyLiveEntityMain extends \DFSClientV3\Models\Respon
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BingBulkKeywordDifficultyLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return BingBulkKeywordDifficultyLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\ReviewsSetTaskEntityMainTasks;
 
-class ReviewsSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class ReviewsSetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class ReviewsSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel
 	/**
 	* @return \DFSClientV3\Entity\Custom\ReviewsSetTaskEntityMainTasksResult[]|null
 	*/
-	public function getResultsByPostID($postID): ?array {
+	#[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

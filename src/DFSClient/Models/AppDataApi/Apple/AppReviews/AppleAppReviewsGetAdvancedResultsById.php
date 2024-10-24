@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\AppDataApi\Apple\AppReviews;
 
 
+use DFSClientV3\Entity\Custom\AppleAppReviewsGetAdvancedResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AppleAppReviewsGetAdvancedResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class AppleAppReviewsGetAdvancedResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\AppleAppReviewsGetAdvancedResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\AppleAppReviewsGetAdvancedResultsByIdEntityMain
+  * @return AppleAppReviewsGetAdvancedResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): AppleAppReviewsGetAdvancedResultsByIdEntityMain
 	{
 		return parent::get();
 	}

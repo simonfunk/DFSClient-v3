@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\SerpApi;
 
+use DFSClientV3\Entity\Custom\SerpAiSummaryEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class SerpAiSummary extends AbstractModel
@@ -73,9 +74,10 @@ class SerpAiSummary extends AbstractModel
     }
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\SerpAiSummaryEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\SerpAiSummaryEntityMain
+  * @return SerpAiSummaryEntityMain
+  */
+ #[\Override]
+ public function get(): SerpAiSummaryEntityMain
 	{
 		return parent::get();
 	}

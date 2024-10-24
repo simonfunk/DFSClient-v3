@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\DataForSeoLabsApi\Google;
 
 
+use DFSClientV3\Entity\Custom\GoogleCategoriesForKeywordsLanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleCategoriesForKeywordsLanguages extends AbstractModel
@@ -15,9 +16,10 @@ class GoogleCategoriesForKeywordsLanguages extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleCategoriesForKeywordsLanguagesEntityMain
+     * @return GoogleCategoriesForKeywordsLanguagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleCategoriesForKeywordsLanguagesEntityMain
+    #[\Override]
+    public function get(): GoogleCategoriesForKeywordsLanguagesEntityMain
     {
         return parent::get();
     }

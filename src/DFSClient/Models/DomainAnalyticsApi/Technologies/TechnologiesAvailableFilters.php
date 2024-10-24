@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\DomainAnalyticsApi\Technologies;
 
 
+use DFSClientV3\Entity\Custom\TechnologiesAvailableFiltersEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class TechnologiesAvailableFilters extends AbstractModel
@@ -15,9 +16,10 @@ class TechnologiesAvailableFilters extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\TechnologiesAvailableFiltersEntityMain
+     * @return TechnologiesAvailableFiltersEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\TechnologiesAvailableFiltersEntityMain
+    #[\Override]
+    public function get(): TechnologiesAvailableFiltersEntityMain
     {
         return parent::get();
     }

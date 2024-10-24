@@ -29,6 +29,7 @@ class OnPageGetStatus extends AbstractModel
     /**
      * @return OnPageGetStatusEntityMain
      */
+    #[\Override]
     public function get(): OnPageGetStatusEntityMain
     {
        return parent::get();

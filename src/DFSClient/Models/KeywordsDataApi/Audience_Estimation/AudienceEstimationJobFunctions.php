@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Audience_Estimation;
 
 
+use DFSClientV3\Entity\Custom\AudienceEstimationJobFunctionsEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AudienceEstimationJobFunctions extends AbstractModel
@@ -26,9 +27,10 @@ class AudienceEstimationJobFunctions extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\AudienceEstimationJobFunctionsEntityMain
+     * @return AudienceEstimationJobFunctionsEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\AudienceEstimationJobFunctionsEntityMain
+    #[\Override]
+    public function get(): AudienceEstimationJobFunctionsEntityMain
     {
         return parent::get();
     }

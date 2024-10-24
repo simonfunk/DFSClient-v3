@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\MerchantApi;
 
 
+use DFSClientV3\Entity\Custom\LanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class Languages extends AbstractModel
@@ -25,9 +26,10 @@ class Languages extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\LanguagesEntityMain
+     * @return LanguagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\LanguagesEntityMain
+    #[\Override]
+    public function get(): LanguagesEntityMain
     {
         return parent::get();
     }

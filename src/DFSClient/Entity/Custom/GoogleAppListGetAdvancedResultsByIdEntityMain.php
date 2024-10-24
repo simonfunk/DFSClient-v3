@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleAppListGetAdvancedResultsByIdEntityMainTasks;
 
-class GoogleAppListGetAdvancedResultsByIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleAppListGetAdvancedResultsByIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleAppListGetAdvancedResultsByIdEntityMain extends \DFSClientV3\Models\
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleAppListGetAdvancedResultsByIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleAppListGetAdvancedResultsByIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

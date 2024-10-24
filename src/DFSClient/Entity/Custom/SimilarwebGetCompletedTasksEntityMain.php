@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\SimilarwebGetCompletedTasksEntityMainTasks;
 
-class SimilarwebGetCompletedTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class SimilarwebGetCompletedTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class SimilarwebGetCompletedTasksEntityMain extends \DFSClientV3\Models\Response
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\SimilarwebGetCompletedTasksEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return SimilarwebGetCompletedTasksEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

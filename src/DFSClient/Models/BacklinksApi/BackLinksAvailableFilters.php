@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\BacklinksApi;
 
 
+use DFSClientV3\Entity\Custom\BackLinksAvailableFiltersEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class BackLinksAvailableFilters extends AbstractModel
@@ -16,9 +17,10 @@ class BackLinksAvailableFilters extends AbstractModel
 	protected $useNewMapper = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\BackLinksAvailableFiltersEntityMain
+     * @return BackLinksAvailableFiltersEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\BackLinksAvailableFiltersEntityMain
+    #[\Override]
+    public function get(): BackLinksAvailableFiltersEntityMain
     {
         return parent::get();
     }

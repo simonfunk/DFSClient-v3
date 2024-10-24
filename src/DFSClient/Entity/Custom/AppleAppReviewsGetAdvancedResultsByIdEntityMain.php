@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AppleAppReviewsGetAdvancedResultsByIdEntityMainTasks;
 
-class AppleAppReviewsGetAdvancedResultsByIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AppleAppReviewsGetAdvancedResultsByIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AppleAppReviewsGetAdvancedResultsByIdEntityMain extends \DFSClientV3\Model
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AppleAppReviewsGetAdvancedResultsByIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AppleAppReviewsGetAdvancedResultsByIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

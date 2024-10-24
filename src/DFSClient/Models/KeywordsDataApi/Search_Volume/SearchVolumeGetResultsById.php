@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Search_Volume;
 
+use DFSClientV3\Entity\Custom\SearchVolumeGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class SearchVolumeGetResultsById extends AbstractModel
@@ -34,9 +35,10 @@ class SearchVolumeGetResultsById extends AbstractModel
     }
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\SearchVolumeGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\SearchVolumeGetResultsByIdEntityMain
+  * @return SearchVolumeGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): SearchVolumeGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

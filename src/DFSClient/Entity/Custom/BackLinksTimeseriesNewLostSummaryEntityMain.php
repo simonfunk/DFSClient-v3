@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BackLinksTimeseriesNewLostSummaryEntityMainTasks;
 
-class BackLinksTimeseriesNewLostSummaryEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BackLinksTimeseriesNewLostSummaryEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BackLinksTimeseriesNewLostSummaryEntityMain extends \DFSClientV3\Models\Re
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BackLinksTimeseriesNewLostSummaryEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return BackLinksTimeseriesNewLostSummaryEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

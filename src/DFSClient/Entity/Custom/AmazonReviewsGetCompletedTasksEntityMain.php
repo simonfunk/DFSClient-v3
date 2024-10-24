@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AmazonReviewsGetCompletedTasksEntityMainTasks;
 
-class AmazonReviewsGetCompletedTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AmazonReviewsGetCompletedTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AmazonReviewsGetCompletedTasksEntityMain extends \DFSClientV3\Models\Respo
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AmazonReviewsGetCompletedTasksEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AmazonReviewsGetCompletedTasksEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

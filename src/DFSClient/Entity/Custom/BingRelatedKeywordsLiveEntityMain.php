@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BingRelatedKeywordsLiveEntityMainTasks;
 
-class BingRelatedKeywordsLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BingRelatedKeywordsLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BingRelatedKeywordsLiveEntityMain extends \DFSClientV3\Models\ResponseMode
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BingRelatedKeywordsLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return BingRelatedKeywordsLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

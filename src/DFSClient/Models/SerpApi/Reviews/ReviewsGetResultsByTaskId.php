@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\SerpApi\Reviews;
 
 
+use DFSClientV3\Entity\Custom\ReviewsGetResultsByTaskIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class ReviewsGetResultsByTaskId extends AbstractModel
@@ -36,9 +37,10 @@ class ReviewsGetResultsByTaskId extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\ReviewsGetResultsByTaskIdEntityMain
+     * @return ReviewsGetResultsByTaskIdEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\ReviewsGetResultsByTaskIdEntityMain
+    #[\Override]
+    public function get(): ReviewsGetResultsByTaskIdEntityMain
     {
         return parent::get();
     }

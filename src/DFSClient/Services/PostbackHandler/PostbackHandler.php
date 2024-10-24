@@ -11,12 +11,10 @@ use DFSClientV3\Models\PaveDataOptions;
 class PostbackHandler
 {
     protected $model;
-    protected $status;
 
-    public function __construct(AbstractModel $model, $status = true)
+    public function __construct(AbstractModel $model, protected $status = true)
     {
         $this->model = $model;
-        $this->status = $status;
     }
 
     public function mapPostbackPayload ($postbackPayload)

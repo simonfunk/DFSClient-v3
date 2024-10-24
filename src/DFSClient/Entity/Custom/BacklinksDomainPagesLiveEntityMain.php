@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BacklinksDomainPagesLiveEntityMainTasks;
 
-class BacklinksDomainPagesLiveEntityMain extends \DFSClientV3\Models\ResponseModel
+class BacklinksDomainPagesLiveEntityMain extends ResponseModel
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BacklinksDomainPagesLiveEntityMain extends \DFSClientV3\Models\ResponseMod
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BacklinksDomainPagesLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return BacklinksDomainPagesLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

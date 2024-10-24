@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\DataForSeoLabsApi;
 
 
+use DFSClientV3\Entity\Custom\DFSLabsAvailableFiltersEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class DFSLabsAvailableFilters extends AbstractModel
@@ -16,9 +17,10 @@ class DFSLabsAvailableFilters extends AbstractModel
 	protected $useNewMapper = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\DFSLabsAvailableFiltersEntityMain
+     * @return DFSLabsAvailableFiltersEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\DFSLabsAvailableFiltersEntityMain
+    #[\Override]
+    public function get(): DFSLabsAvailableFiltersEntityMain
     {
         return parent::get();
     }

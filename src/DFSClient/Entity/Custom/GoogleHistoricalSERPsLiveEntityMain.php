@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleHistoricalSERPsLiveEntityMainTasks;
 
-class GoogleHistoricalSERPsLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleHistoricalSERPsLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleHistoricalSERPsLiveEntityMain extends \DFSClientV3\Models\ResponseMo
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleHistoricalSERPsLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleHistoricalSERPsLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

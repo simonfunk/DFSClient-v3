@@ -10,11 +10,6 @@ class LoggerMessage implements MessageInterface
 {
 
     /**
-     * @var string $messageBody
-     */
-    protected $messageBody;
-
-    /**
      * @var string $messageTitle ;
      */
     protected $messageTitle;
@@ -47,15 +42,15 @@ class LoggerMessage implements MessageInterface
      * @param string $level
      * @param string $dfsVersion
      * @param string $localVersion
+     * @param string $messageBody
      */
-    public function __construct($messageBody,
+    public function __construct(protected $messageBody,
                                 string $messageTitle = '',
                                 string $file = '',
                                 string $level = 'INFO',
                                 string $dfsVersion = '',
                                 string $localVersion = '')
     {
-        $this->messageBody = $messageBody;
         $this->messageTitle = $messageTitle;
         $this->level = $level;
         $this->file = $file;
@@ -63,36 +58,43 @@ class LoggerMessage implements MessageInterface
         $this->localVersion = $localVersion;
     }
 
+    #[\Override]
     public function getMessageTitle(): string
     {
         return $this->messageTitle;
     }
 
+    #[\Override]
     public function getMessageBody()
     {
         return $this->messageBody;
     }
 
+    #[\Override]
     public function getLevel(): string
     {
         return $this->level;
     }
 
+    #[\Override]
     public function getFile(): string
     {
         return $this->file;
     }
 
+    #[\Override]
     public function getDFSVersion()
     {
         return $this->dfsVersion;
     }
 
+    #[\Override]
     public function getLocalVersion()
     {
         return $this->localVersion;
     }
 
+    #[\Override]
     public function getStructuredMessageAsString()
     {
 

@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BusinessListingsSearchLiveEntityMainTasks;
 
-class BusinessListingsSearchLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BusinessListingsSearchLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BusinessListingsSearchLiveEntityMain extends \DFSClientV3\Models\ResponseM
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BusinessListingsSearchLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return BusinessListingsSearchLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

@@ -17,6 +17,7 @@ class InternalDriver implements LoggerDriverContract
      * @param Application $application
      * @throws NotificationDriverNotFound
      */
+    #[\Override]
     public function pushMessage(MessageInterface $message, Application $application)
     {
         $config = $application->getConfig();
@@ -49,6 +50,7 @@ class InternalDriver implements LoggerDriverContract
      * @param Application $application
      * @return bool
      */
+    #[\Override]
     public function isDuplicatedMessage(MessageInterface $message, Application $application): bool
     {
         $hash = md5($message->getLevel().$message->getFile().$message->getMessageTitle().$message->getDFSVersion());

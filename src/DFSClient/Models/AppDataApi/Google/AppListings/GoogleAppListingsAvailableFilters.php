@@ -16,7 +16,8 @@ class GoogleAppListingsAvailableFilters extends AbstractModel {
 	/**
 	 * @return GoogleAppListingsAvailableFiltersEntityMain
 	 */
-	public function get(): GoogleAppListingsAvailableFiltersEntityMain {
+	#[\Override]
+ public function get(): GoogleAppListingsAvailableFiltersEntityMain {
 		return parent::get();
 	}
 }

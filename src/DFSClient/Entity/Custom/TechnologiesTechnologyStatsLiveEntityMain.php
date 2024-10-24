@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\TechnologiesTechnologyStatsLiveEntityMainTasks;
 
-class TechnologiesTechnologyStatsLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class TechnologiesTechnologyStatsLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class TechnologiesTechnologyStatsLiveEntityMain extends \DFSClientV3\Models\Resp
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\TechnologiesTechnologyStatsLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return TechnologiesTechnologyStatsLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

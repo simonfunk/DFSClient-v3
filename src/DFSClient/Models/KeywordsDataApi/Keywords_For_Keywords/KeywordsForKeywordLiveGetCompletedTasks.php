@@ -3,6 +3,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Keywords_For_Keywords;
 
+use DFSClientV3\Entity\Custom\KeywordsForKeywordLiveGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordsForKeywordLiveGetCompletedTasks extends AbstractModel
@@ -24,9 +25,10 @@ class KeywordsForKeywordLiveGetCompletedTasks extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\KeywordsForKeywordLiveGetCompletedTasksEntityMain
+     * @return KeywordsForKeywordLiveGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\KeywordsForKeywordLiveGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): KeywordsForKeywordLiveGetCompletedTasksEntityMain
     {
         return parent::get();
     }

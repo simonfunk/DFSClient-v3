@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BusinessInfoGetResultsByIdEntityMainTasks;
 
-class BusinessInfoGetResultsByIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BusinessInfoGetResultsByIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BusinessInfoGetResultsByIdEntityMain extends \DFSClientV3\Models\ResponseM
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BusinessInfoGetResultsByIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return BusinessInfoGetResultsByIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

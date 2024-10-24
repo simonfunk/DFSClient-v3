@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Google_Trends\Explore;
 
 
+use DFSClientV3\Entity\Custom\GoogleTrendsGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleTrendsGetResultsById extends AbstractModel
@@ -16,9 +17,10 @@ class GoogleTrendsGetResultsById extends AbstractModel
     protected $useNewMapper = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleTrendsGetResultsByIdEntityMain
+     * @return GoogleTrendsGetResultsByIdEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleTrendsGetResultsByIdEntityMain
+    #[\Override]
+    public function get(): GoogleTrendsGetResultsByIdEntityMain
     {
         return parent::get();
     }

@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AppleAppListingsAvailableFiltersEntityMainTasks;
 
-class AppleAppListingsAvailableFiltersEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AppleAppListingsAvailableFiltersEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AppleAppListingsAvailableFiltersEntityMain extends \DFSClientV3\Models\Res
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AppleAppListingsAvailableFiltersEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AppleAppListingsAvailableFiltersEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

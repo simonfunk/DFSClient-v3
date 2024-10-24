@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\DataForSeoLabsApi;
 
 
+use DFSClientV3\Entity\Custom\DFSLabsLocationsAndLanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class DFSLabsLocationsAndLanguages extends AbstractModel
@@ -15,9 +16,10 @@ class DFSLabsLocationsAndLanguages extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\DFSLabsLocationsAndLanguagesEntityMain
+     * @return DFSLabsLocationsAndLanguagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\DFSLabsLocationsAndLanguagesEntityMain
+    #[\Override]
+    public function get(): DFSLabsLocationsAndLanguagesEntityMain
     {
         return parent::get();
     }

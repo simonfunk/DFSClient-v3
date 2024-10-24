@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\DataforseoTrendsLocationsEntityMainTasks;
 
-class DataforseoTrendsLocationsEntityMain extends \DFSClientV3\Models\ResponseModel 
+class DataforseoTrendsLocationsEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class DataforseoTrendsLocationsEntityMain extends \DFSClientV3\Models\ResponseMo
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\DataforseoTrendsLocationsEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return DataforseoTrendsLocationsEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

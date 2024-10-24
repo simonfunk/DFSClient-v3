@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Google_Trends;
 
 
+use DFSClientV3\Entity\Custom\GoogleTrendsLocationsEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleTrendsLocations extends AbstractModel
@@ -25,9 +26,10 @@ class GoogleTrendsLocations extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleTrendsLocationsEntityMain
+     * @return GoogleTrendsLocationsEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleTrendsLocationsEntityMain
+    #[\Override]
+    public function get(): GoogleTrendsLocationsEntityMain
     {
         return parent::get();
     }

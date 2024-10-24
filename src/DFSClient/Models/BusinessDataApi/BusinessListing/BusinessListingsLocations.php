@@ -15,7 +15,8 @@ class BusinessListingsLocations extends AbstractModel {
 	/**
 	 * @return BusinessListingsLocationsEntityMain
 	 */
-	public function get(): BusinessListingsLocationsEntityMain {
+	#[\Override]
+ public function get(): BusinessListingsLocationsEntityMain {
 		return parent::get();
 	}
 }

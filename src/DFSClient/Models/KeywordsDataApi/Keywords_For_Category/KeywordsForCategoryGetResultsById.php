@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Keywords_For_Category;
 
 
+use DFSClientV3\Entity\Custom\KeywordsForCategoryGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordsForCategoryGetResultsById extends AbstractModel
@@ -22,9 +23,10 @@ class KeywordsForCategoryGetResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\KeywordsForCategoryGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\KeywordsForCategoryGetResultsByIdEntityMain
+  * @return KeywordsForCategoryGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): KeywordsForCategoryGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

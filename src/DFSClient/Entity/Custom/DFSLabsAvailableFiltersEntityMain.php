@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\DFSLabsAvailableFiltersEntityMainTasks;
 
-class DFSLabsAvailableFiltersEntityMain extends \DFSClientV3\Models\ResponseModel 
+class DFSLabsAvailableFiltersEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class DFSLabsAvailableFiltersEntityMain extends \DFSClientV3\Models\ResponseMode
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\DFSLabsAvailableFiltersEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return DFSLabsAvailableFiltersEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

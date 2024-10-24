@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AudienceEstimationIndustriesEntityMainTasks;
 
-class AudienceEstimationIndustriesEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AudienceEstimationIndustriesEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AudienceEstimationIndustriesEntityMain extends \DFSClientV3\Models\Respons
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AudienceEstimationIndustriesEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AudienceEstimationIndustriesEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

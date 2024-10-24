@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi;
 
+use DFSClientV3\Entity\Custom\EndpointsModelEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class Endpoints extends AbstractModel
@@ -12,7 +13,8 @@ class Endpoints extends AbstractModel
 	protected $requestToFunction = 'keywords_data/endpoints';
 	protected $resultShouldBeTransformedToArray = true;
 	
-	public function get(): \DFSClientV3\Entity\Custom\EndpointsModelEntityMain
+	#[\Override]
+ public function get(): EndpointsModelEntityMain
 	{
 		return parent::get();
 	}

@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\OnPageApi;
 
 
+use DFSClientV3\Entity\Custom\OnPageGetSummaryByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class OnPageGetSummaryById extends AbstractModel
@@ -24,9 +25,10 @@ class OnPageGetSummaryById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\OnPageGetSummaryByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\OnPageGetSummaryByIdEntityMain
+  * @return OnPageGetSummaryByIdEntityMain
+  */
+ #[\Override]
+ public function get(): OnPageGetSummaryByIdEntityMain
 	{
 		return parent::get();
 	}

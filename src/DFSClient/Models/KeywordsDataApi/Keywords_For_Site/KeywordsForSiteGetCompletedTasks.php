@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Keywords_For_Site;
 
 
+use DFSClientV3\Entity\Custom\KeywordsForSiteGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordsForSiteGetCompletedTasks extends AbstractModel
@@ -24,9 +25,10 @@ class KeywordsForSiteGetCompletedTasks extends AbstractModel
         return $this;
     }
     /**
-     * @return \DFSClientV3\Entity\Custom\KeywordsForSiteGetCompletedTasksEntityMain
+     * @return KeywordsForSiteGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\KeywordsForSiteGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): KeywordsForSiteGetCompletedTasksEntityMain
     {
         return parent::get();
     }

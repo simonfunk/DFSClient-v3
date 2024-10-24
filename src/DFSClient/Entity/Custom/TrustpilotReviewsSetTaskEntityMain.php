@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\TrustpilotReviewsSetTaskEntityMainTasks;
 
-class TrustpilotReviewsSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class TrustpilotReviewsSetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class TrustpilotReviewsSetTaskEntityMain extends \DFSClientV3\Models\ResponseMod
 	/**
 	* @return \DFSClientV3\Entity\Custom\TrustpilotReviewsSetTaskEntityMainTasksResult[]|null
 	*/
-	public function getResultsByPostID($postID): ?array {
+	#[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

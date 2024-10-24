@@ -96,9 +96,10 @@ class GoogleAppListingsSearchLive extends AbstractModel {
 	}
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\GoogleAppListingsSearchLiveEntityMain
-	 */
-	public function get(): GoogleAppListingsSearchLiveEntityMain {
+  * @return GoogleAppListingsSearchLiveEntityMain
+  */
+ #[\Override]
+ public function get(): GoogleAppListingsSearchLiveEntityMain {
 		return parent::get();
 	}
 

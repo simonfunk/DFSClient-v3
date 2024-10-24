@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AmazonProductCompetitorsLiveEntityMainTasks;
 
-class AmazonProductCompetitorsLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AmazonProductCompetitorsLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AmazonProductCompetitorsLiveEntityMain extends \DFSClientV3\Models\Respons
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AmazonProductCompetitorsLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AmazonProductCompetitorsLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

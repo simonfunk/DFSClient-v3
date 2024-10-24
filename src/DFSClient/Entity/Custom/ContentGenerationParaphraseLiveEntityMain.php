@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\ContentGenerationParaphraseLiveEntityMainTasks;
 
-class ContentGenerationParaphraseLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class ContentGenerationParaphraseLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class ContentGenerationParaphraseLiveEntityMain extends \DFSClientV3\Models\Resp
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\ContentGenerationParaphraseLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return ContentGenerationParaphraseLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

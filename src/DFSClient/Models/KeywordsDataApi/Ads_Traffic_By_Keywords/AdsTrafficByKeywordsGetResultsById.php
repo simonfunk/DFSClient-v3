@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Ads_Traffic_By_Keywords;
 
 
+use DFSClientV3\Entity\Custom\AdsTrafficByKeywordsGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AdsTrafficByKeywordsGetResultsById extends AbstractModel
@@ -35,9 +36,10 @@ class AdsTrafficByKeywordsGetResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\AdsTrafficByKeywordsGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\AdsTrafficByKeywordsGetResultsByIdEntityMain
+  * @return AdsTrafficByKeywordsGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): AdsTrafficByKeywordsGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

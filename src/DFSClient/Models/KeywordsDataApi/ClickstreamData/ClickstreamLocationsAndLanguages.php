@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\ClickstreamData;
 
 
+use DFSClientV3\Entity\Custom\ClickstreamLocationsAndLanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class ClickstreamLocationsAndLanguages extends AbstractModel
@@ -15,9 +16,10 @@ class ClickstreamLocationsAndLanguages extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\ClickstreamLocationsAndLanguagesEntityMain
+     * @return ClickstreamLocationsAndLanguagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\ClickstreamLocationsAndLanguagesEntityMain
+    #[\Override]
+    public function get(): ClickstreamLocationsAndLanguagesEntityMain
     {
         return parent::get();
     }

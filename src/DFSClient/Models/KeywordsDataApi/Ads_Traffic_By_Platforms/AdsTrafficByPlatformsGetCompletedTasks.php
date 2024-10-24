@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Ads_Traffic_By_Platforms;
 
 
+use DFSClientV3\Entity\Custom\AdsTrafficByPlatformsGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AdsTrafficByPlatformsGetCompletedTasks extends AbstractModel
@@ -24,9 +25,10 @@ class AdsTrafficByPlatformsGetCompletedTasks extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\AdsTrafficByPlatformsGetCompletedTasksEntityMain
+     * @return AdsTrafficByPlatformsGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\AdsTrafficByPlatformsGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): AdsTrafficByPlatformsGetCompletedTasksEntityMain
     {
         return parent::get();
     }

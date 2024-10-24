@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\QuestionsAndAnswersLiveEntityMainTasks;
 
-class QuestionsAndAnswersLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class QuestionsAndAnswersLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class QuestionsAndAnswersLiveEntityMain extends \DFSClientV3\Models\ResponseMode
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\QuestionsAndAnswersLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return QuestionsAndAnswersLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

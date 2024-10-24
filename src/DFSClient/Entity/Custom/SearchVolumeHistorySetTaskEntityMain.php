@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\SearchVolumeHistorySetTaskEntityMainTasks;
 
-class SearchVolumeHistorySetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class SearchVolumeHistorySetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class SearchVolumeHistorySetTaskEntityMain extends \DFSClientV3\Models\ResponseM
 	/**
 	* @return \DFSClientV3\Entity\Custom\SearchVolumeHistorySetTaskEntityMainTasksResult|null
 	*/
-	public function getResultsByPostID($postID): ?\DFSClientV3\Entity\Custom\SearchVolumeHistorySetTaskEntityMainTasksResult {
+	#[\Override]
+ public function getResultsByPostID($postID): ?SearchVolumeHistorySetTaskEntityMainTasksResult {
 		return parent::getResultsByPostID($postID);
 	}
 }

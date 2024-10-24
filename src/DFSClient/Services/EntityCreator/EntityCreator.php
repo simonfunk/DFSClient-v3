@@ -8,11 +8,6 @@ class EntityCreator
 {
 
     /**
-     * @var string $path
-     */
-    private $path;
-
-    /**
      * @var ClassGenerator
      */
     private $classGenerator;
@@ -21,9 +16,8 @@ class EntityCreator
      * EntityCreator constructor.
      * @param string $path
      */
-    public function __construct(string $path)
+    public function __construct(private readonly string $path)
     {
-        $this->path = $path;
         $this->classGenerator = new ClassGenerator();
     }
 

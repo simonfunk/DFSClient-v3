@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\ContentGenerationCheckGrammarLiveEntityMainTasks;
 
-class ContentGenerationCheckGrammarLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class ContentGenerationCheckGrammarLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class ContentGenerationCheckGrammarLiveEntityMain extends \DFSClientV3\Models\Re
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\ContentGenerationCheckGrammarLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return ContentGenerationCheckGrammarLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

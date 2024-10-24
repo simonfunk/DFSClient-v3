@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleAppSearchesGetCompletedTasksEntityMainTasks;
 
-class GoogleAppSearchesGetCompletedTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleAppSearchesGetCompletedTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleAppSearchesGetCompletedTasksEntityMain extends \DFSClientV3\Models\R
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleAppSearchesGetCompletedTasksEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleAppSearchesGetCompletedTasksEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

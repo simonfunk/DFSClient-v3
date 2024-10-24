@@ -73,7 +73,7 @@ class ClassGenerator
         $string = '';
 
         foreach ($types as $type => $availability)
-            $string .= $className.'Entity'.$suffix.ucfirst($type).'[]|';
+            $string .= $className.'Entity'.$suffix.ucfirst((string) $type).'[]|';
 
         return substr($string, 0, -1);
     }
@@ -105,7 +105,7 @@ class ClassGenerator
             $types = array_flip(ClassGenerator::validateClassField(array_keys($types)));
 
             foreach ($types as $type => $availability){
-                $nameSpaces[] = 'use DFSClientV3\Entity\Custom\\'.$className.'Entity'.$suffix.ucfirst($type).';';
+                $nameSpaces[] = 'use DFSClientV3\Entity\Custom\\'.$className.'Entity'.$suffix.ucfirst((string) $type).';';
             }
 
             return $nameSpaces;
@@ -160,13 +160,13 @@ class ClassGenerator
                         // check if the current iteration path equal some variadic type
                         if ($classCreatorOptions->isJsonContainVariadicType() && isset($variadicTypes[$this->currentIterationPath])) {
                             $fieldNameWithType = $variadicTypes[$this->currentIterationPath];
-                            $options->setSuffix($classCreatorOptions->getSuffix() . ucfirst($value->$fieldNameWithType));
+                            $options->setSuffix($classCreatorOptions->getSuffix() . ucfirst((string) $value->$fieldNameWithType));
                             $options->setIsFileRequired(true);
                         }
                         // variable contain object
                         elseif (!is_int($key) && is_object($value)){
                             $options->setIsFileRequired(true);
-                            $options->setSuffix($classCreatorOptions->getSuffix().ucfirst($key));
+                            $options->setSuffix($classCreatorOptions->getSuffix().ucfirst((string) $key));
                             $classProperty[$key] = $this->generateTypeForDocBlock(
                                 $options->getClassName(),
                                 $options->getSuffix(),
@@ -175,7 +175,7 @@ class ClassGenerator
                             $classNameSpaces = $this->generateNameSpaces($options->getClassName(), $options->getSuffix());
                         }
                         elseif (is_int($key) && $value instanceof DictionaryEntity){
-                            $dictionaryNameSpaceArray = explode('\\', get_class($value));
+                            $dictionaryNameSpaceArray = explode('\\', $value::class);
                             $dictionaryName = $dictionaryNameSpaceArray[count($dictionaryNameSpaceArray) - 1];
 
                             $options->setIsFileRequired(false);
@@ -191,7 +191,7 @@ class ClassGenerator
 
                             $emulateNextPathLevel = $this->currentIterationPath.'->(:number)';
                             $options->setIsFileRequired(false);
-                            $options->setSuffix($classCreatorOptions->getSuffix().ucfirst($key));
+                            $options->setSuffix($classCreatorOptions->getSuffix().ucfirst((string) $key));
 
                             // value has variadic types
                             if (isset($variadicTypes[$emulateNextPathLevel])) {
@@ -384,7 +384,7 @@ class ClassGenerator
                 $string .= str_replace(['$type','$varName', '$definedValue'], [gettype($res), $key, "'$res'"], $templateOfProperty);
             }else{
 
-                if (strpos($res, '[]') === false){ // check if type is not collection
+                if (!str_contains((string) $res, '[]')){ // check if type is not collection
                     $string .= str_replace(['$type','$varName', '$definedValue'], [$res, $key, 'null'], $templateOfProperty);
                 }else{
                     $string .= str_replace(['@var null', '$type','$varName', '$definedValue'], ['@var array', $res, $key, '[]'], $templateOfProperty);
@@ -460,7 +460,7 @@ class ClassGenerator
 
         foreach ($types as $type)
         {
-            $resultString .= $className.'EntityMainTasksResultItems'.ucfirst($type).'[]|';
+            $resultString .= $className.'EntityMainTasksResultItems'.ucfirst((string) $type).'[]|';
         }
 
 
@@ -477,7 +477,7 @@ class ClassGenerator
         $tempArray = [];
         $types = ClassGenerator::validateClassField($types);
         foreach ($types as $type){
-            $tempArray[]= 'use DFSClientV3\Entity\Custom\\'.$className.'EntityMainTasksResultItems'.ucfirst($type).';';
+            $tempArray[]= 'use DFSClientV3\Entity\Custom\\'.$className.'EntityMainTasksResultItems'.ucfirst((string) $type).';';
         }
 
         return $tempArray;
@@ -541,10 +541,8 @@ class ClassGenerator
     /**
      *
      * Function return true if value is object or array
-     *
-     * @param  mixed $value
      */
-    private function isIterable($value): bool
+    private function isIterable(mixed $value): bool
     {
         return is_object($value) || is_array($value);
     }
@@ -582,9 +580,7 @@ class ClassGenerator
         }, $explodedPath);
 
         // delete last element if it is empty. It can ba empty if last element was ->
-        $result = array_filter($result, function ($value){
-           return !empty($value) ? true : false;
-        });
+        $result = array_filter($result, fn($value) => !empty($value) ? true : false);
 
         return implode('->', $result);
     }

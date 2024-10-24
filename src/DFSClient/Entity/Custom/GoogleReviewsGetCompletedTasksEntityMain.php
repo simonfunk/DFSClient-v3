@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleReviewsGetCompletedTasksEntityMainTasks;
 
-class GoogleReviewsGetCompletedTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleReviewsGetCompletedTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleReviewsGetCompletedTasksEntityMain extends \DFSClientV3\Models\Respo
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleReviewsGetCompletedTasksEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleReviewsGetCompletedTasksEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

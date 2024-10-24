@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\BusinessDataApi\Tripadvisor\Reviews;
 
 
+use DFSClientV3\Entity\Custom\TripadvisorReviewsGetResultsByTaskIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class TripadvisorReviewsGetResultsByTaskId extends AbstractModel
@@ -36,9 +37,10 @@ class TripadvisorReviewsGetResultsByTaskId extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\TripadvisorReviewsGetResultsByTaskIdEntityMain
+     * @return TripadvisorReviewsGetResultsByTaskIdEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\TripadvisorReviewsGetResultsByTaskIdEntityMain
+    #[\Override]
+    public function get(): TripadvisorReviewsGetResultsByTaskIdEntityMain
     {
         return parent::get();
     }

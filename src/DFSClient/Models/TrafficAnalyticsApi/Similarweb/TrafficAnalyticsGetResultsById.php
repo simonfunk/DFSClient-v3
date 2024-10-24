@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\TrafficAnalyticsApi\Similarweb;
 
+use DFSClientV3\Entity\Custom\TrafficAnalyticsGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class TrafficAnalyticsGetResultsById extends AbstractModel
@@ -21,9 +22,10 @@ class TrafficAnalyticsGetResultsById extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\TrafficAnalyticsGetResultsByIdEntityMain
+     * @return TrafficAnalyticsGetResultsByIdEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\TrafficAnalyticsGetResultsByIdEntityMain
+    #[\Override]
+    public function get(): TrafficAnalyticsGetResultsByIdEntityMain
     {
         return parent::get();
     }

@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\MerchantApi\Amazon\Asin;
 
 
+use DFSClientV3\Entity\Custom\AmazonAsinGetHtmlResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AmazonAsinGetHtmlResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class AmazonAsinGetHtmlResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\AmazonAsinGetHtmlResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\AmazonAsinGetHtmlResultsByIdEntityMain
+  * @return AmazonAsinGetHtmlResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): AmazonAsinGetHtmlResultsByIdEntityMain
 	{
 		return parent::get();
 	}

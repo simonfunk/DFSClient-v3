@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Keyword_Performance;
 
+use DFSClientV3\Entity\Custom\KeywordPerformanceGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordPerformanceGetResultsById extends AbstractModel
@@ -34,9 +35,10 @@ class KeywordPerformanceGetResultsById extends AbstractModel
     }
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\KeywordPerformanceGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\KeywordPerformanceGetResultsByIdEntityMain
+  * @return KeywordPerformanceGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): KeywordPerformanceGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

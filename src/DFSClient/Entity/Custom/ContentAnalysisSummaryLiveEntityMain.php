@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\ContentAnalysisSummaryLiveEntityMainTasks;
 
-class ContentAnalysisSummaryLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class ContentAnalysisSummaryLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class ContentAnalysisSummaryLiveEntityMain extends \DFSClientV3\Models\ResponseM
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\ContentAnalysisSummaryLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return ContentAnalysisSummaryLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\AppDataApi\Google\AppInfo;
 
 
+use DFSClientV3\Entity\Custom\GoogleAppInfoGetHtmlResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleAppInfoGetHtmlResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class GoogleAppInfoGetHtmlResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\GoogleAppInfoGetHtmlResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\GoogleAppInfoGetHtmlResultsByIdEntityMain
+  * @return GoogleAppInfoGetHtmlResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): GoogleAppInfoGetHtmlResultsByIdEntityMain
 	{
 		return parent::get();
 	}

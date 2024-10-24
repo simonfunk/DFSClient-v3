@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BingHistoricalBulkTrafficEstimationLiveEntityMainTasks;
 
-class BingHistoricalBulkTrafficEstimationLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BingHistoricalBulkTrafficEstimationLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class BingHistoricalBulkTrafficEstimationLiveEntityMain extends \DFSClientV3\Mod
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\BingHistoricalBulkTrafficEstimationLiveEntityMainTasksResult|null
-	*/
-	public function getResultsByPostID($postID): ?\DFSClientV3\Entity\Custom\BingHistoricalBulkTrafficEstimationLiveEntityMainTasksResult {
+  * @return BingHistoricalBulkTrafficEstimationLiveEntityMainTasksResult|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?BingHistoricalBulkTrafficEstimationLiveEntityMainTasksResult {
 		return parent::getResultsByPostID($postID);
 	}
 }

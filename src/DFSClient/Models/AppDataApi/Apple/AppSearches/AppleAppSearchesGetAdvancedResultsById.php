@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\AppDataApi\Apple\AppSearches;
 
 
+use DFSClientV3\Entity\Custom\AppleAppSearchesGetAdvancedResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AppleAppSearchesGetAdvancedResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class AppleAppSearchesGetAdvancedResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\AppleAppSearchesGetAdvancedResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\AppleAppSearchesGetAdvancedResultsByIdEntityMain
+  * @return AppleAppSearchesGetAdvancedResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): AppleAppSearchesGetAdvancedResultsByIdEntityMain
 	{
 		return parent::get();
 	}

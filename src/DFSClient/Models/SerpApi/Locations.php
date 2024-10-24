@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\SerpApi;
 
 
+use DFSClientV3\Entity\Custom\LocationsEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class Locations extends AbstractModel
@@ -35,9 +36,10 @@ class Locations extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\LocationsEntityMain
+     * @return LocationsEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\LocationsEntityMain
+    #[\Override]
+    public function get(): LocationsEntityMain
     {
         return parent::get();
     }

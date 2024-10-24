@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\SerpApi;
 
+use DFSClientV3\Entity\Custom\GetSerpHtmlResultsByTaskIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GetSerpHtmlResultsByTaskId extends AbstractModel
@@ -43,9 +44,10 @@ class GetSerpHtmlResultsByTaskId extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GetSerpHtmlResultsByTaskIdEntityMain
+     * @return GetSerpHtmlResultsByTaskIdEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GetSerpHtmlResultsByTaskIdEntityMain
+    #[\Override]
+    public function get(): GetSerpHtmlResultsByTaskIdEntityMain
     {
         return parent::get();
     }

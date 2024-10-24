@@ -40,6 +40,7 @@ class FileNotification implements NotificationDriverContract
     /**
      * @return bool
      */
+    #[\Override]
     public function run(): bool
     {
         if (file_exists($this->filePath) && is_writable($this->filePath)){

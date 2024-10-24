@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleCategoriesForKeywordsLanguagesEntityMainTasks;
 
-class GoogleCategoriesForKeywordsLanguagesEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleCategoriesForKeywordsLanguagesEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleCategoriesForKeywordsLanguagesEntityMain extends \DFSClientV3\Models
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleCategoriesForKeywordsLanguagesEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleCategoriesForKeywordsLanguagesEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

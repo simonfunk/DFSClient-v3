@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\MerchantApi\Google\Sellers;
 
 
+use DFSClientV3\Entity\Custom\GoogleSellersGetAdvancedResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleSellersGetAdvancedResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class GoogleSellersGetAdvancedResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\GoogleSellersGetAdvancedResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\GoogleSellersGetAdvancedResultsByIdEntityMain
+  * @return GoogleSellersGetAdvancedResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): GoogleSellersGetAdvancedResultsByIdEntityMain
 	{
 		return parent::get();
 	}

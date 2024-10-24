@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleCategoriesForDomainLiveEntityMainTasks;
 
-class GoogleCategoriesForDomainLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleCategoriesForDomainLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleCategoriesForDomainLiveEntityMain extends \DFSClientV3\Models\Respon
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleCategoriesForDomainLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleCategoriesForDomainLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

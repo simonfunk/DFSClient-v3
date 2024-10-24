@@ -16,7 +16,8 @@ class BusinessListingsAvailableFilters extends AbstractModel {
 	/**
 	 * @return BusinessListingsAvailableFiltersEntityMain
 	 */
-	public function get(): BusinessListingsAvailableFiltersEntityMain {
+	#[\Override]
+ public function get(): BusinessListingsAvailableFiltersEntityMain {
 		return parent::get();
 	}
 }

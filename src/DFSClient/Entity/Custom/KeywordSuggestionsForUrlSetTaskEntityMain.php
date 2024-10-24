@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlSetTaskEntityMainTasks;
 
-class KeywordSuggestionsForUrlSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class KeywordSuggestionsForUrlSetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class KeywordSuggestionsForUrlSetTaskEntityMain extends \DFSClientV3\Models\Resp
 	/**
 	* @return \DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlSetTaskEntityMainTasksResult|null
 	*/
-	public function getResultsByPostID($postID): ?\DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlSetTaskEntityMainTasksResult {
+	#[\Override]
+ public function getResultsByPostID($postID): ?KeywordSuggestionsForUrlSetTaskEntityMainTasksResult {
 		return parent::getResultsByPostID($postID);
 	}
 }

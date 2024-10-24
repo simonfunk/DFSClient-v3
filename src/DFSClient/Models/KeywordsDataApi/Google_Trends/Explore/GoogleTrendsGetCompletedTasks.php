@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Google_Trends\Explore;
 
 
+use DFSClientV3\Entity\Custom\GoogleTrendsGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleTrendsGetCompletedTasks extends AbstractModel
@@ -15,9 +16,10 @@ class GoogleTrendsGetCompletedTasks extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleTrendsGetCompletedTasksEntityMain
+     * @return GoogleTrendsGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleTrendsGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): GoogleTrendsGetCompletedTasksEntityMain
     {
         return parent::get();
     }

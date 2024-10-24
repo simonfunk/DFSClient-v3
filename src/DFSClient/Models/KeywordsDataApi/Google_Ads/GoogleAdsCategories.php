@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Google_Ads;
 
 
+use DFSClientV3\Entity\Custom\GoogleAdsCategoriesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleAdsCategories extends AbstractModel
@@ -25,9 +26,10 @@ class GoogleAdsCategories extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleAdsCategoriesEntityMain
+     * @return GoogleAdsCategoriesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleAdsCategoriesEntityMain
+    #[\Override]
+    public function get(): GoogleAdsCategoriesEntityMain
     {
         return parent::get();
     }

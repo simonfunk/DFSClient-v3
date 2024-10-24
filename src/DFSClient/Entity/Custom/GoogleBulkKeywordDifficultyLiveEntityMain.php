@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GoogleBulkKeywordDifficultyLiveEntityMainTasks;
 
-class GoogleBulkKeywordDifficultyLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GoogleBulkKeywordDifficultyLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GoogleBulkKeywordDifficultyLiveEntityMain extends \DFSClientV3\Models\Resp
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GoogleBulkKeywordDifficultyLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GoogleBulkKeywordDifficultyLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

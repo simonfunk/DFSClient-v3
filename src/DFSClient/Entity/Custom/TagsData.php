@@ -7,17 +7,16 @@ namespace DFSClientV3\Entity\Custom;
 class TagsData
 {
     /**
-     * @var
-     */
-    protected $tagContent;
-
-    /**
      * TagsData constructor.
      * @param $tagContent
      */
-    public function __construct($tagContent)
+    public function __construct(
+        /**
+         * @var
+         */
+        protected $tagContent
+    )
     {
-        $this->tagContent = $tagContent;
     }
     /**
      * @return mixed

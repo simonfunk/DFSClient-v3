@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\MerchantApi\Google\Reviews;
 
 
+use DFSClientV3\Entity\Custom\GoogleReviewsGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleReviewsGetCompletedTasks extends AbstractModel
@@ -14,9 +15,10 @@ class GoogleReviewsGetCompletedTasks extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleReviewsGetCompletedTasksEntityMain
+     * @return GoogleReviewsGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleReviewsGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): GoogleReviewsGetCompletedTasksEntityMain
     {
         return parent::get();
     }

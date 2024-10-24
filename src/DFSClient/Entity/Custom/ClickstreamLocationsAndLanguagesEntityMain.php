@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\ClickstreamLocationsAndLanguagesEntityMainTasks;
 
-class ClickstreamLocationsAndLanguagesEntityMain extends \DFSClientV3\Models\ResponseModel 
+class ClickstreamLocationsAndLanguagesEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class ClickstreamLocationsAndLanguagesEntityMain extends \DFSClientV3\Models\Res
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\ClickstreamLocationsAndLanguagesEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return ClickstreamLocationsAndLanguagesEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

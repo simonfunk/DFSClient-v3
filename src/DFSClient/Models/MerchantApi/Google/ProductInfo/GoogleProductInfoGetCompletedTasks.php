@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\MerchantApi\Google\ProductInfo;
 
 
+use DFSClientV3\Entity\Custom\GoogleProductInfoGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleProductInfoGetCompletedTasks extends AbstractModel
@@ -14,9 +15,10 @@ class GoogleProductInfoGetCompletedTasks extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleProductInfoGetCompletedTasksEntityMain
+     * @return GoogleProductInfoGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleProductInfoGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): GoogleProductInfoGetCompletedTasksEntityMain
     {
         return parent::get();
     }

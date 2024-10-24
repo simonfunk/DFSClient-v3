@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\AppDataApi\Google\AppInfo;
 
 
+use DFSClientV3\Entity\Custom\GoogleAppInfoGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleAppInfoGetCompletedTasks extends AbstractModel
@@ -14,9 +15,10 @@ class GoogleAppInfoGetCompletedTasks extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleAppInfoGetCompletedTasksEntityMain
+     * @return GoogleAppInfoGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleAppInfoGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): GoogleAppInfoGetCompletedTasksEntityMain
     {
         return parent::get();
     }

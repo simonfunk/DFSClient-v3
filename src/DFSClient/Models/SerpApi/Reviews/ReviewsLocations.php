@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\SerpApi\Reviews;
 
 
+use DFSClientV3\Entity\Custom\ReviewsLocationsEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class ReviewsLocations extends AbstractModel
@@ -25,9 +26,10 @@ class ReviewsLocations extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\ReviewsLocationsEntityMain
+     * @return ReviewsLocationsEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\ReviewsLocationsEntityMain
+    #[\Override]
+    public function get(): ReviewsLocationsEntityMain
     {
         return parent::get();
     }

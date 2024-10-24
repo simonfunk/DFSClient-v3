@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\DomainAnalyticsApi\Similarweb;
 
+use DFSClientV3\Entity\Custom\SimilarwebGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class SimilarwebGetResultsById extends AbstractModel {
@@ -19,9 +20,10 @@ class SimilarwebGetResultsById extends AbstractModel {
 	}
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\SimilarwebGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\SimilarwebGetResultsByIdEntityMain {
+  * @return SimilarwebGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): SimilarwebGetResultsByIdEntityMain {
 		return parent::get();
 	}
 

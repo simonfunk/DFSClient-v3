@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\QuestionsAndAnswersSetTaskEntityMainTasks;
 
-class QuestionsAndAnswersSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class QuestionsAndAnswersSetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class QuestionsAndAnswersSetTaskEntityMain extends \DFSClientV3\Models\ResponseM
 	/**
 	* @return \DFSClientV3\Entity\Custom\QuestionsAndAnswersSetTaskEntityMainTasksResult[]|null
 	*/
-	public function getResultsByPostID($postID): ?array {
+	#[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

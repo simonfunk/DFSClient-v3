@@ -13,7 +13,7 @@ class RelatedKeywords extends AbstractModel
 
     public function setKeywords($key)
     {
-        $this->setOpt('keyword', $key);
+        $this->setOpt();
 
         return $this;
     }

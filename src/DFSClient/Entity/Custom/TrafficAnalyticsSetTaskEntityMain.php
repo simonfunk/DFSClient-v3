@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\TrafficAnalyticsSetTaskEntityMainTasks;
 
-class TrafficAnalyticsSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class TrafficAnalyticsSetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class TrafficAnalyticsSetTaskEntityMain extends \DFSClientV3\Models\ResponseMode
 	/**
 	* @return \DFSClientV3\Entity\Custom\TrafficAnalyticsSetTaskEntityMainTasksResult[]|null
 	*/
-	public function getResultsByPostID($postID): ?array {
+	#[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

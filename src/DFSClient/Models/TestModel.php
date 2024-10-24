@@ -55,6 +55,7 @@ class TestModel extends AbstractModel
     /**
      * @return TestModelEntityMain
      */
+    #[\Override]
     public function get(): TestModelEntityMain
     {
         return parent::get();

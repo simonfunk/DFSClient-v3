@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\MerchantApi\Amazon\Reviews;
 
 
+use DFSClientV3\Entity\Custom\AmazonReviewsGetAdvancedResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AmazonReviewsGetAdvancedResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class AmazonReviewsGetAdvancedResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\AmazonReviewsGetAdvancedResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\AmazonReviewsGetAdvancedResultsByIdEntityMain
+  * @return AmazonReviewsGetAdvancedResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): AmazonReviewsGetAdvancedResultsByIdEntityMain
 	{
 		return parent::get();
 	}

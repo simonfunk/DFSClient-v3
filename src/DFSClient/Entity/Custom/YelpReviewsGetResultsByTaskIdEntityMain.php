@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\YelpReviewsGetResultsByTaskIdEntityMainTasks;
 
-class YelpReviewsGetResultsByTaskIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class YelpReviewsGetResultsByTaskIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class YelpReviewsGetResultsByTaskIdEntityMain extends \DFSClientV3\Models\Respon
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\YelpReviewsGetResultsByTaskIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return YelpReviewsGetResultsByTaskIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

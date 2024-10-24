@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\DomainAnalyticsApi\Technologies;
 
+use DFSClientV3\Entity\Custom\TechnologiesLocationsEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class TechnologiesLocations extends AbstractModel {
@@ -12,9 +13,10 @@ class TechnologiesLocations extends AbstractModel {
 	protected $resultShouldBeTransformedToArray = true;
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\TechnologiesLocationsEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\TechnologiesLocationsEntityMain {
+  * @return TechnologiesLocationsEntityMain
+  */
+ #[\Override]
+ public function get(): TechnologiesLocationsEntityMain {
 		return parent::get();
 	}
 }

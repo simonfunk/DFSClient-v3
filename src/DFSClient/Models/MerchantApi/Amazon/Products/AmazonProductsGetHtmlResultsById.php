@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\MerchantApi\Amazon\Products;
 
 
+use DFSClientV3\Entity\Custom\AmazonProductsGetHtmlResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AmazonProductsGetHtmlResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class AmazonProductsGetHtmlResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\AmazonProductsGetHtmlResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\AmazonProductsGetHtmlResultsByIdEntityMain
+  * @return AmazonProductsGetHtmlResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): AmazonProductsGetHtmlResultsByIdEntityMain
 	{
 		return parent::get();
 	}

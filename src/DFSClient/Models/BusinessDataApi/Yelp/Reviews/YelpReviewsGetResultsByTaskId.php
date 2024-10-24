@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\BusinessDataApi\Yelp\Reviews;
 
 
+use DFSClientV3\Entity\Custom\YelpReviewsGetResultsByTaskIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class YelpReviewsGetResultsByTaskId extends AbstractModel
@@ -36,9 +37,10 @@ class YelpReviewsGetResultsByTaskId extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\YelpReviewsGetResultsByTaskIdEntityMain
+     * @return YelpReviewsGetResultsByTaskIdEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\YelpReviewsGetResultsByTaskIdEntityMain
+    #[\Override]
+    public function get(): YelpReviewsGetResultsByTaskIdEntityMain
     {
         return parent::get();
     }

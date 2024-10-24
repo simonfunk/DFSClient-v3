@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\KeywordsForCategorySetTaskEntityMainTasks;
 
-class KeywordsForCategorySetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class KeywordsForCategorySetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class KeywordsForCategorySetTaskEntityMain extends \DFSClientV3\Models\ResponseM
 	/**
 	* @return \DFSClientV3\Entity\Custom\KeywordsForCategorySetTaskEntityMainTasksResult[]|null
 	*/
-	public function getResultsByPostID($postID): ?array {
+	#[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

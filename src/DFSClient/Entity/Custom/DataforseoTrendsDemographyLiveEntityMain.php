@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\DataforseoTrendsDemographyLiveEntityMainTasks;
 
-class DataforseoTrendsDemographyLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class DataforseoTrendsDemographyLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class DataforseoTrendsDemographyLiveEntityMain extends \DFSClientV3\Models\Respo
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\DataforseoTrendsDemographyLiveEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return DataforseoTrendsDemographyLiveEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

@@ -255,7 +255,7 @@ abstract class AbstractModel
                 if ($model->postId !== null)
                     $payload['json'][$model->postId] = $model->payload;
             }else {
-                throw new \Exception('Provided model '.get_class($model). ' is not supported merge');
+                throw new \Exception('Provided model '.$model::class. ' is not supported merge');
             }
         }
 
@@ -273,7 +273,7 @@ abstract class AbstractModel
         }
 
         //get called class.
-        $calledClassNameWithNapeSpace = get_called_class();
+        $calledClassNameWithNapeSpace = static::class;
         $classNameArray = explode('\\', $calledClassNameWithNapeSpace);
         //for php 7.3 can be use array_last_key
          $classNameArray[count($classNameArray ) -1];
@@ -364,7 +364,7 @@ abstract class AbstractModel
              */
 
             //get called class.
-            $calledClassNameWithNapeSpace = get_called_class();
+            $calledClassNameWithNapeSpace = static::class;
             $classNameArray = explode('\\', $calledClassNameWithNapeSpace);
             //for php 7.3 can be use array_last_key
             $classNameArray[count($classNameArray ) -1];
@@ -392,7 +392,7 @@ abstract class AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Services\HttpClient\Handlers\Responses
+     * @return Responses
      */
     public function process()
     {
@@ -404,7 +404,7 @@ abstract class AbstractModel
         }
 
         if (!$this->requestToFunction) {
-            dd('requestFunction can not be null, set this field in your model: ' . get_called_class());
+            dd('requestFunction can not be null, set this field in your model: ' . static::class);
         }
 
         if ($this->postId === null)
@@ -442,7 +442,7 @@ abstract class AbstractModel
      */
     public function getCalledClass()
     {
-        $calledClassNameWithNapeSpace = get_called_class();
+        $calledClassNameWithNapeSpace = static::class;
         $classNameArray = explode('\\', $calledClassNameWithNapeSpace);
 
         //for php 7.3 can be use array_last_key

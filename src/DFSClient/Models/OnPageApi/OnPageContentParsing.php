@@ -50,6 +50,7 @@ class OnPageContentParsing extends AbstractModel
     /**
      * @return OnPageContentParsingEntityMain
      */
+    #[\Override]
     public function get(): OnPageContentParsingEntityMain
     {
         return parent::get();

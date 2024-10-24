@@ -133,12 +133,12 @@ class DataMapper
                 // for iteration array with variadic type
                 if ($paveDataOptions->isJsonContainVariadicType() && isset($variadicTypes[$this->currentIterationPath])) {
                     $fieldNameWithType = $variadicTypes[$this->currentIterationPath];
-                    $options->setClassSuffix($options->getClassSuffix().ucfirst($value->$fieldNameWithType));
+                    $options->setClassSuffix($options->getClassSuffix().ucfirst((string) $value->$fieldNameWithType));
                     $options->setIsCollection(false);
                         $result[$key] = $this->paveDataNew($options);
                 }
                 elseif($entity instanceof DictionaryEntity) {
-                    $dictionaryNameSpaceArray = explode('\\', get_class($entity));
+                    $dictionaryNameSpaceArray = explode('\\', $entity::class);
                     $dictionaryName = $dictionaryNameSpaceArray[count($dictionaryNameSpaceArray) - 1];
 
                     $options->setIsCollection(true);
@@ -147,7 +147,7 @@ class DataMapper
                 }
                 // variable contain object
                 elseif (!is_int($key) && is_object($value)){
-                    $options->setClassSuffix($options->getClassSuffix().ucfirst($key));
+                    $options->setClassSuffix($options->getClassSuffix().ucfirst((string) $key));
                     $options->setIsCollection(false);
                     if ($entity !== null)
                         $entity->$key = $this->paveDataNew($options);
@@ -161,7 +161,7 @@ class DataMapper
                 // variable contain array with object
                 elseif (!is_int($key) && is_array($value)) {
                     $options->setIsCollection(true);
-                    $options->setClassSuffix($options->getClassSuffix().ucfirst($key));
+                    $options->setClassSuffix($options->getClassSuffix().ucfirst((string) $key));
 
                     if ($entity !== null)
                         $entity->$key = $this->paveDataNew($options);
@@ -245,9 +245,9 @@ class DataMapper
 
                 if (is_object($value) || is_array($value) && $obj = ClassGenerator::arrayContainObject($value)) {
                     if (is_object($value)) {
-                       $model->$key = $this->paveData(json_encode($value), $classSuffix.ucfirst($key), $resultCanBeTransformedToArray);
+                       $model->$key = $this->paveData(json_encode($value), $classSuffix.ucfirst((string) $key), $resultCanBeTransformedToArray);
                     } elseif (is_array($value) && $obj = ClassGenerator::arrayContainObject($value)) {
-                       $model->$key = $this->paveData(json_encode($value), $classSuffix.ucfirst($key), $resultCanBeTransformedToArray, true);
+                       $model->$key = $this->paveData(json_encode($value), $classSuffix.ucfirst((string) $key), $resultCanBeTransformedToArray, true);
                     }
                 }else {
                     if ($key !== 'version')
@@ -310,7 +310,7 @@ class DataMapper
                     $isCollection = false;
                     $docBlock = $reflected->getProperty($propertyName)->getDocComment();
 
-                    if (strpos($docBlock, str_replace('DFSClientV3\Entity\Custom\\', '', $classNameWithNameSpace).ucfirst($propertyName).'[]') !== false)
+                    if (str_contains($docBlock, str_replace('DFSClientV3\Entity\Custom\\', '', $classNameWithNameSpace).ucfirst($propertyName).'[]'))
                         $isCollection = true;
 
                     if ($isCollection){
@@ -506,7 +506,7 @@ class DataMapper
             // execute if json is collection type
             if ($mustbeAsCollection === true){
 
-                if (substr($classSuffix, -5) === 'Items') {
+                if (str_ends_with((string) $classSuffix, 'Items')) {
                     $arrayWithResults[$key] = $this->paveAdvancedData(json_encode($value), $classSuffix.ucfirst($value->type), $resultCanBeTransformedToArray);
                 }else{
                     $arrayWithResults[$key] = $this->paveAdvancedData(json_encode($value), $classSuffix, $resultCanBeTransformedToArray);
@@ -525,13 +525,13 @@ class DataMapper
 
                         //   dump($classSuffix, $value);
                         if (is_object($value)) {
-                            $model->$key = $this->paveAdvancedData(json_encode($value), $classSuffix.ucfirst($key), $resultCanBeTransformedToArray);
+                            $model->$key = $this->paveAdvancedData(json_encode($value), $classSuffix.ucfirst((string) $key), $resultCanBeTransformedToArray);
                         }
                         elseif ( is_array($value) && $obj = ClassGenerator::arrayContainObject($value)) {
                             if ($key === 'items'){
                                 $model->$key = $this->paveAdvancedData(json_encode($value), $classSuffix.ucfirst($key), $resultCanBeTransformedToArray, true);
                             } else{
-                                $model->$key = $this->paveAdvancedData(json_encode($value), $classSuffix.ucfirst($key), $resultCanBeTransformedToArray, true);
+                                $model->$key = $this->paveAdvancedData(json_encode($value), $classSuffix.ucfirst((string) $key), $resultCanBeTransformedToArray, true);
                             }
                         }
 
@@ -570,10 +570,8 @@ class DataMapper
     /**
      *
      * Function return true if value is object or array
-     *
-     * @param  mixed $value
      */
-    private function isIterable($value): bool
+    private function isIterable(mixed $value): bool
     {
         return is_object($value) || is_array($value);
     }
@@ -611,9 +609,7 @@ class DataMapper
         }, $explodedPath);
 
         // delete last element if it is empty. It can ba empty if last element was ->
-        $result = array_filter($result, function ($value){
-            return !empty($value) ? true : false;
-        });
+        $result = array_filter($result, fn($value) => !empty($value) ? true : false);
 
         return implode('->', $result);
     }

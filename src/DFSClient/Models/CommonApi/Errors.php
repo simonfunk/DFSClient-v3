@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\CommonApi;
 
+use DFSClientV3\Entity\Custom\ErrorsEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class Errors extends AbstractModel
@@ -14,9 +15,10 @@ class Errors extends AbstractModel
 
 
     /**
-     * @return \DFSClientV3\Entity\Custom\ErrorsEntityMain
+     * @return ErrorsEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\ErrorsEntityMain
+    #[\Override]
+    public function get(): ErrorsEntityMain
     {
         return parent::get();
     }

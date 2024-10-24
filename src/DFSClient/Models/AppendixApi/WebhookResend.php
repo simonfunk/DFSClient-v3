@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\AppendixApi;
 
+use DFSClientV3\Entity\Custom\WebhookResendEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class WebhookResend extends AbstractModel
@@ -15,9 +16,10 @@ class WebhookResend extends AbstractModel
 
 
     /**
-     * @return \DFSClientV3\Entity\Custom\WebhookResendEntityMain
+     * @return WebhookResendEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\WebhookResendEntityMain
+    #[\Override]
+    public function get(): WebhookResendEntityMain
     {
         return parent::get();
     }

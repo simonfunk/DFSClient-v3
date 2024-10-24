@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlGetCompletedTasksEntityMainTasks;
 
-class KeywordSuggestionsForUrlGetCompletedTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class KeywordSuggestionsForUrlGetCompletedTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class KeywordSuggestionsForUrlGetCompletedTasksEntityMain extends \DFSClientV3\M
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlGetCompletedTasksEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return KeywordSuggestionsForUrlGetCompletedTasksEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

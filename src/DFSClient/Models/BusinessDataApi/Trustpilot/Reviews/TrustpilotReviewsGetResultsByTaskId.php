@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\BusinessDataApi\Trustpilot\Reviews;
 
 
+use DFSClientV3\Entity\Custom\TrustpilotReviewsGetResultsByTaskIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class TrustpilotReviewsGetResultsByTaskId extends AbstractModel
@@ -36,9 +37,10 @@ class TrustpilotReviewsGetResultsByTaskId extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\TrustpilotReviewsGetResultsByTaskIdEntityMain
+     * @return TrustpilotReviewsGetResultsByTaskIdEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\TrustpilotReviewsGetResultsByTaskIdEntityMain
+    #[\Override]
+    public function get(): TrustpilotReviewsGetResultsByTaskIdEntityMain
     {
         return parent::get();
     }

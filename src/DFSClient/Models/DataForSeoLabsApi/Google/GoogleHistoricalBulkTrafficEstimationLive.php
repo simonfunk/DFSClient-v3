@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\DataForSeoLabsApi\Google;
 
 
+use DFSClientV3\Entity\Custom\GoogleHistoricalBulkTrafficEstimationLiveEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleHistoricalBulkTrafficEstimationLive extends AbstractModel
@@ -111,9 +112,10 @@ class GoogleHistoricalBulkTrafficEstimationLive extends AbstractModel
 	}
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\GoogleHistoricalBulkTrafficEstimationLiveEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\GoogleHistoricalBulkTrafficEstimationLiveEntityMain
+  * @return GoogleHistoricalBulkTrafficEstimationLiveEntityMain
+  */
+ #[\Override]
+ public function get(): GoogleHistoricalBulkTrafficEstimationLiveEntityMain
 	{
 		return parent::get();
 	}

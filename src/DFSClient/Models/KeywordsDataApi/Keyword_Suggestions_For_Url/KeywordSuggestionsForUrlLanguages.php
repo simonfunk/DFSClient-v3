@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Keyword_Suggestions_For_Url;
 
 
+use DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlLanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordSuggestionsForUrlLanguages extends AbstractModel
@@ -26,9 +27,10 @@ class KeywordSuggestionsForUrlLanguages extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlLanguagesEntityMain
+     * @return KeywordSuggestionsForUrlLanguagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlLanguagesEntityMain
+    #[\Override]
+    public function get(): KeywordSuggestionsForUrlLanguagesEntityMain
     {
         return parent::get();
     }

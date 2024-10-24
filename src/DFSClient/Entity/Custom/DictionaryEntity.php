@@ -5,18 +5,12 @@ namespace DFSClientV3\Entity\Custom;
  class DictionaryEntity implements \JsonSerializable
 {
     /**
-     * @var array $contents
-     */
-    private $contents = [];
-
-    /**
      * $contents must be associative array
      * DictionaryEntity constructor.
      * @param array $contents
      */
-    public function __construct(array $contents)
+    public function __construct(private array $contents)
     {
-        $this->contents = $contents;
     }
 
      /**
@@ -73,6 +67,7 @@ namespace DFSClientV3\Entity\Custom;
      /**
       * @return array|mixed
       */
+    #[\Override]
     public function jsonSerialize()
     {
         return $this->contents;

@@ -177,6 +177,7 @@ class OnPageContentParsingLive extends AbstractModel
     /**
      * @return OnPageContentParsingLiveEntityMain
      */
+    #[\Override]
     public function get(): OnPageContentParsingLiveEntityMain
     {
         return parent::get();

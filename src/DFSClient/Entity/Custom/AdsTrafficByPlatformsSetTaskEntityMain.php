@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AdsTrafficByPlatformsSetTaskEntityMainTasks;
 
-class AdsTrafficByPlatformsSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AdsTrafficByPlatformsSetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class AdsTrafficByPlatformsSetTaskEntityMain extends \DFSClientV3\Models\Respons
 	/**
 	* @return \DFSClientV3\Entity\Custom\AdsTrafficByPlatformsSetTaskEntityMainTasksResult[]|null
 	*/
-	public function getResultsByPostID($postID): ?array {
+	#[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

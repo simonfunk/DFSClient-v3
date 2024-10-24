@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Google_Ads;
 
 
+use DFSClientV3\Entity\Custom\GoogleAdsLocationsEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleAdsLocations extends AbstractModel
@@ -25,9 +26,10 @@ class GoogleAdsLocations extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleAdsLocationsEntityMain
+     * @return GoogleAdsLocationsEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleAdsLocationsEntityMain
+    #[\Override]
+    public function get(): GoogleAdsLocationsEntityMain
     {
         return parent::get();
     }

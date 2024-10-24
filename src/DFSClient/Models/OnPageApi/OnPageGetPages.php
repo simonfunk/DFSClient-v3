@@ -3,6 +3,7 @@
 
 namespace DFSClientV3\Models\OnPageApi;
 
+use DFSClientV3\Entity\Custom\OnPageGetPagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class OnPageGetPages extends AbstractModel
@@ -80,9 +81,10 @@ class OnPageGetPages extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\OnPageGetPagesEntityMain
+     * @return OnPageGetPagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\OnPageGetPagesEntityMain
+    #[\Override]
+    public function get(): OnPageGetPagesEntityMain
     {
         return parent::get();
     }

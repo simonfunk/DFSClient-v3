@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\SettingOnPageTasksEntityMainTasks;
 
-class SettingOnPageTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class SettingOnPageTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class SettingOnPageTasksEntityMain extends \DFSClientV3\Models\ResponseModel
 	/**
 	* @return \DFSClientV3\Entity\Custom\SettingOnPageTasksEntityMainTasksResult|null
 	*/
-	public function getResultsByPostID($postID): ?\DFSClientV3\Entity\Custom\SettingOnPageTasksEntityMainTasksResult {
+	#[\Override]
+ public function getResultsByPostID($postID): ?SettingOnPageTasksEntityMainTasksResult {
 		return parent::getResultsByPostID($postID);
 	}
 }

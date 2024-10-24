@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\DomainAnalyticsApi\Whois;
 
 
+use DFSClientV3\Entity\Custom\WhoisAvailableFiltersEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class WhoisAvailableFilters extends AbstractModel
@@ -16,9 +17,10 @@ class WhoisAvailableFilters extends AbstractModel
 	protected $useNewMapper = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\WhoisAvailableFiltersEntityMain
+     * @return WhoisAvailableFiltersEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\WhoisAvailableFiltersEntityMain
+    #[\Override]
+    public function get(): WhoisAvailableFiltersEntityMain
     {
         return parent::get();
     }

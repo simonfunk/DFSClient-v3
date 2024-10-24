@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\SearchVolumeHistoryGetCompletedTasksEntityMainTasks;
 
-class SearchVolumeHistoryGetCompletedTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class SearchVolumeHistoryGetCompletedTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class SearchVolumeHistoryGetCompletedTasksEntityMain extends \DFSClientV3\Models
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\SearchVolumeHistoryGetCompletedTasksEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return SearchVolumeHistoryGetCompletedTasksEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

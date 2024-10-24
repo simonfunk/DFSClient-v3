@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\BusinessDataApi\Google\Reviews;
 
 
+use DFSClientV3\Entity\Custom\ReviewsGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class ReviewsGetCompletedTasks extends AbstractModel
@@ -26,9 +27,10 @@ class ReviewsGetCompletedTasks extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\ReviewsGetCompletedTasksEntityMain
+     * @return ReviewsGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\ReviewsGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): ReviewsGetCompletedTasksEntityMain
     {
         return parent::get();
     }

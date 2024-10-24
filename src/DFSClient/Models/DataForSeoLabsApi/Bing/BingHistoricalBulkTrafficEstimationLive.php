@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\DataForSeoLabsApi\Bing;
 
 
+use DFSClientV3\Entity\Custom\BingHistoricalBulkTrafficEstimationLiveEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class BingHistoricalBulkTrafficEstimationLive extends AbstractModel
@@ -78,9 +79,10 @@ class BingHistoricalBulkTrafficEstimationLive extends AbstractModel
 	}
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\BingHistoricalBulkTrafficEstimationLiveEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\BingHistoricalBulkTrafficEstimationLiveEntityMain
+  * @return BingHistoricalBulkTrafficEstimationLiveEntityMain
+  */
+ #[\Override]
+ public function get(): BingHistoricalBulkTrafficEstimationLiveEntityMain
 	{
 		return parent::get();
 	}

@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\AppDataApi\Apple\AppReviews;
 
 
+use DFSClientV3\Entity\Custom\AppleAppReviewsGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AppleAppReviewsGetCompletedTasks extends AbstractModel
@@ -14,9 +15,10 @@ class AppleAppReviewsGetCompletedTasks extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\AppleAppReviewsGetCompletedTasksEntityMain
+     * @return AppleAppReviewsGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\AppleAppReviewsGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): AppleAppReviewsGetCompletedTasksEntityMain
     {
         return parent::get();
     }

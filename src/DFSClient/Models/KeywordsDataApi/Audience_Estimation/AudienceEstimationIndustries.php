@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Audience_Estimation;
 
 
+use DFSClientV3\Entity\Custom\AudienceEstimationIndustriesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AudienceEstimationIndustries extends AbstractModel
@@ -26,9 +27,10 @@ class AudienceEstimationIndustries extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\AudienceEstimationIndustriesEntityMain
+     * @return AudienceEstimationIndustriesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\AudienceEstimationIndustriesEntityMain
+    #[\Override]
+    public function get(): AudienceEstimationIndustriesEntityMain
     {
         return parent::get();
     }

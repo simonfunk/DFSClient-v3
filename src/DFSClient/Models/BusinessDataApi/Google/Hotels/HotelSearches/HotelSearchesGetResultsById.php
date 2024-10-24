@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\BusinessDataApi\Google\Hotels\HotelSearches;
 
 
+use DFSClientV3\Entity\Custom\HotelSearchesGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class HotelSearchesGetResultsById extends AbstractModel
@@ -35,9 +36,10 @@ class HotelSearchesGetResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\HotelSearchesGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\HotelSearchesGetResultsByIdEntityMain
+  * @return HotelSearchesGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): HotelSearchesGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

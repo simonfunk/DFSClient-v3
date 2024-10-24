@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\MerchantApi\Amazon\Sellers;
 
 
+use DFSClientV3\Entity\Custom\AmazonSellersGetHtmlResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AmazonSellersGetHtmlResultsById extends AbstractModel
@@ -27,7 +28,8 @@ class AmazonSellersGetHtmlResultsById extends AbstractModel
 	/**
 	 * @return \DFSClientV3\Entity\Custom\AmazonSellersGetHtmlResultsByIdEntityMain
 	 */
-	public function get(): \DFSClientV3\Entity\Custom\AmazonSellersGetHtmlResultsByIdEntityMain
+	#[\Override]
+ public function get(): AmazonSellersGetHtmlResultsByIdEntityMain
 	{
 		return parent::get();
 	}

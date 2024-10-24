@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AppleAppIntersectionLiveEntityMainTasks;
 
-class AppleAppIntersectionLiveEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AppleAppIntersectionLiveEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AppleAppIntersectionLiveEntityMain extends \DFSClientV3\Models\ResponseMod
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AppleAppIntersectionLiveEntityMainTasksResult|null
-	*/
-	public function getResultsByPostID($postID): ?\DFSClientV3\Entity\Custom\AppleAppIntersectionLiveEntityMainTasksResult {
+  * @return AppleAppIntersectionLiveEntityMainTasksResult|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?AppleAppIntersectionLiveEntityMainTasksResult {
 		return parent::getResultsByPostID($postID);
 	}
 }

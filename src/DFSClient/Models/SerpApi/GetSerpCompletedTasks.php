@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\SerpApi;
 
+use DFSClientV3\Entity\Custom\GetSerpCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 use function GuzzleHttp\Psr7\str;
 
@@ -42,9 +43,10 @@ class GetSerpCompletedTasks extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GetSerpCompletedTasksEntityMain
+     * @return GetSerpCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GetSerpCompletedTasksEntityMain
+    #[\Override]
+    public function get(): GetSerpCompletedTasksEntityMain
     {
         return parent::get();
     }

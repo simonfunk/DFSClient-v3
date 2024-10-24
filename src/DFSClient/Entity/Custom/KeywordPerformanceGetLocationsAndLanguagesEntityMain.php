@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\KeywordPerformanceGetLocationsAndLanguagesEntityMainTasks;
 
-class KeywordPerformanceGetLocationsAndLanguagesEntityMain extends \DFSClientV3\Models\ResponseModel 
+class KeywordPerformanceGetLocationsAndLanguagesEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class KeywordPerformanceGetLocationsAndLanguagesEntityMain extends \DFSClientV3\
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\KeywordPerformanceGetLocationsAndLanguagesEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return KeywordPerformanceGetLocationsAndLanguagesEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

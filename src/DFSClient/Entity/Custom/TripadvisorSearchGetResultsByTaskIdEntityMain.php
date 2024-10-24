@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\TripadvisorSearchGetResultsByTaskIdEntityMainTasks;
 
-class TripadvisorSearchGetResultsByTaskIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class TripadvisorSearchGetResultsByTaskIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class TripadvisorSearchGetResultsByTaskIdEntityMain extends \DFSClientV3\Models\
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\TripadvisorSearchGetResultsByTaskIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return TripadvisorSearchGetResultsByTaskIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

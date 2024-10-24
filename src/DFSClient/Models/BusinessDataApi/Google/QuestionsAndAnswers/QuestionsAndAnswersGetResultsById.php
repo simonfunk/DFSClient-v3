@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\BusinessDataApi\Google\QuestionsAndAnswers;
 
 
+use DFSClientV3\Entity\Custom\QuestionsAndAnswersGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class QuestionsAndAnswersGetResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class QuestionsAndAnswersGetResultsById extends AbstractModel
 	}
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\QuestionsAndAnswersGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\QuestionsAndAnswersGetResultsByIdEntityMain
+  * @return QuestionsAndAnswersGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): QuestionsAndAnswersGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

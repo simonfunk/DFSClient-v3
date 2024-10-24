@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlLanguagesEntityMainTasks;
 
-class KeywordSuggestionsForUrlLanguagesEntityMain extends \DFSClientV3\Models\ResponseModel 
+class KeywordSuggestionsForUrlLanguagesEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class KeywordSuggestionsForUrlLanguagesEntityMain extends \DFSClientV3\Models\Re
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlLanguagesEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return KeywordSuggestionsForUrlLanguagesEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

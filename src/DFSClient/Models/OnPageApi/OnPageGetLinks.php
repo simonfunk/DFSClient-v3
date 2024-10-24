@@ -104,6 +104,7 @@ class OnPageGetLinks extends AbstractModel
     /**
      * @return OnPageGetLinksEntityMain
      */
+    #[\Override]
     public function get(): OnPageGetLinksEntityMain
     {
         return parent::get();

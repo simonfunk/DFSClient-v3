@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\BingAdsSearchVolumeSetTaskEntityMainTasks;
 
-class BingAdsSearchVolumeSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class BingAdsSearchVolumeSetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class BingAdsSearchVolumeSetTaskEntityMain extends \DFSClientV3\Models\ResponseM
 	/**
 	* @return \DFSClientV3\Entity\Custom\BingAdsSearchVolumeSetTaskEntityMainTasksResult[]|null
 	*/
-	public function getResultsByPostID($postID): ?array {
+	#[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

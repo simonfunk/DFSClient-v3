@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\AppDataApi\Google\AppListings;
 
+use DFSClientV3\Entity\Custom\GoogleAppListingsCategoriesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleAppListingsCategories extends AbstractModel
@@ -13,9 +14,10 @@ class GoogleAppListingsCategories extends AbstractModel
 	protected $resultShouldBeTransformedToArray = true;
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\GoogleAppListingsCategoriesEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\GoogleAppListingsCategoriesEntityMain
+  * @return GoogleAppListingsCategoriesEntityMain
+  */
+ #[\Override]
+ public function get(): GoogleAppListingsCategoriesEntityMain
 	{
 		return parent::get();
 	}

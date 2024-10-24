@@ -103,6 +103,7 @@ class OnPageGetResources extends AbstractModel
     /**
      * @return OnPageGetResourcesEntityMain
      */
+    #[\Override]
     public function get(): OnPageGetResourcesEntityMain
     {
         return parent::get();

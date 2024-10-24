@@ -4,16 +4,6 @@ namespace DFSClientV3\Models;
 
 class ResponseModel implements \IteratorAggregate
 {
-    /**
-     * @var bool $requestStatus status of http request
-     */
-    private $requestStatus = false;
-
-    /**
-     * @var string $pathToMainData path for Iterator
-     */
-    private $pathToMainData;
-
     public $status_code;
 
     public $tasks_error = -1;
@@ -22,12 +12,17 @@ class ResponseModel implements \IteratorAggregate
      * ResponseModel constructor.
      * @param bool $requestStatus
      */
-    public function __construct(bool $requestStatus, string $pathToMainData)
+    public function __construct(
+        private readonly bool $requestStatus,
+        /**
+         * @var string $pathToMainData path for Iterator
+         */
+        private readonly string $pathToMainData
+    )
     {
-        $this->requestStatus = $requestStatus;
-        $this->pathToMainData = $pathToMainData;
     }
 
+    #[\Override]
     public function getIterator(): \Traversable
     {
         // TODO: Implement getIterator() method.

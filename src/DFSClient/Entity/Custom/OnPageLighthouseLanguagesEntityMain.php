@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\OnPageLighthouseLanguagesEntityMainTasks;
 
-class OnPageLighthouseLanguagesEntityMain extends \DFSClientV3\Models\ResponseModel 
+class OnPageLighthouseLanguagesEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class OnPageLighthouseLanguagesEntityMain extends \DFSClientV3\Models\ResponseMo
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\OnPageLighthouseLanguagesEntityMainTasksResult|null
-	*/
-	public function getResultsByPostID($postID): ?\DFSClientV3\Entity\Custom\OnPageLighthouseLanguagesEntityMainTasksResult {
+  * @return OnPageLighthouseLanguagesEntityMainTasksResult|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?OnPageLighthouseLanguagesEntityMainTasksResult {
 		return parent::getResultsByPostID($postID);
 	}
 }

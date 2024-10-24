@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\AppDataApi\Google\AppList;
 
 
+use DFSClientV3\Entity\Custom\GoogleAppListGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleAppListGetCompletedTasks extends AbstractModel
@@ -14,9 +15,10 @@ class GoogleAppListGetCompletedTasks extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\GoogleAppListGetCompletedTasksEntityMain
+     * @return GoogleAppListGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\GoogleAppListGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): GoogleAppListGetCompletedTasksEntityMain
     {
         return parent::get();
     }

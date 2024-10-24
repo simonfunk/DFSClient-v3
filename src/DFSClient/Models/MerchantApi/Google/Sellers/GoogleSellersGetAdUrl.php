@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\MerchantApi\Google\Sellers;
 
 
+use DFSClientV3\Entity\Custom\GoogleSellersGetAdUrlEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleSellersGetAdUrl extends AbstractModel
@@ -27,7 +28,8 @@ class GoogleSellersGetAdUrl extends AbstractModel
 	/**
 	 * @return \DFSClientV3\Entity\Custom\GoogleSellersGetAdUrlEntityMain
 	 */
-	public function get(): \DFSClientV3\Entity\Custom\GoogleSellersGetAdUrlEntityMain
+	#[\Override]
+ public function get(): GoogleSellersGetAdUrlEntityMain
 	{
 		return parent::get();
 	}

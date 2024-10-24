@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\GetSerpHtmlResultsByTaskIdEntityMainTasks;
 
-class GetSerpHtmlResultsByTaskIdEntityMain extends \DFSClientV3\Models\ResponseModel 
+class GetSerpHtmlResultsByTaskIdEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class GetSerpHtmlResultsByTaskIdEntityMain extends \DFSClientV3\Models\ResponseM
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\GetSerpHtmlResultsByTaskIdEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return GetSerpHtmlResultsByTaskIdEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

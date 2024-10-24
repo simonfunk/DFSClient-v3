@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AppleAppSearchesSetTaskEntityMainTasks;
 
-class AppleAppSearchesSetTaskEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AppleAppSearchesSetTaskEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -50,7 +51,8 @@ class AppleAppSearchesSetTaskEntityMain extends \DFSClientV3\Models\ResponseMode
 	/**
 	* @return \DFSClientV3\Entity\Custom\AppleAppSearchesSetTaskEntityMainTasksResult[]|null
 	*/
-	public function getResultsByPostID($postID): ?array {
+	#[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

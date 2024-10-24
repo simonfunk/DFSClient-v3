@@ -3,6 +3,7 @@
 
 namespace DFSClientV3\Models\ContentAnalysisApi;
 
+use DFSClientV3\Entity\Custom\ContentAnalysisLanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class ContentAnalysisLanguages extends AbstractModel
@@ -14,9 +15,10 @@ class ContentAnalysisLanguages extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\ContentAnalysisLanguagesEntityMain
-     */
-	public function get() : \DFSClientV3\Entity\Custom\ContentAnalysisLanguagesEntityMain {
+  * @return ContentAnalysisLanguagesEntityMain
+  */
+ #[\Override]
+ public function get() : ContentAnalysisLanguagesEntityMain {
         return parent::get();
     }
 }

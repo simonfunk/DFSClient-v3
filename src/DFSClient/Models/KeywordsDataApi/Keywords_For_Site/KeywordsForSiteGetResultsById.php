@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Keywords_For_Site;
 
+use DFSClientV3\Entity\Custom\KeywordsForSiteGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordsForSiteGetResultsById extends AbstractModel
@@ -34,9 +35,10 @@ class KeywordsForSiteGetResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\KeywordsForSiteGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\KeywordsForSiteGetResultsByIdEntityMain
+  * @return KeywordsForSiteGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): KeywordsForSiteGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

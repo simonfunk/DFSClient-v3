@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Keyword_Suggestions_For_Url;
 
+use DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordSuggestionsForUrlGetResultsById extends AbstractModel
@@ -35,9 +36,10 @@ class KeywordSuggestionsForUrlGetResultsById extends AbstractModel
     }
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\KeywordSuggestionsForUrlGetResultsByIdEntityMain
+  * @return KeywordSuggestionsForUrlGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): KeywordSuggestionsForUrlGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

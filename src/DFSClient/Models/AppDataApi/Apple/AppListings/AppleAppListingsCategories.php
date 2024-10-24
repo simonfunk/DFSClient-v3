@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\AppDataApi\Apple\AppListings;
 
+use DFSClientV3\Entity\Custom\AppleAppListingsCategoriesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AppleAppListingsCategories extends AbstractModel
@@ -13,9 +14,10 @@ class AppleAppListingsCategories extends AbstractModel
 	protected $resultShouldBeTransformedToArray = true;
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\AppleAppListingsCategoriesEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\AppleAppListingsCategoriesEntityMain
+  * @return AppleAppListingsCategoriesEntityMain
+  */
+ #[\Override]
+ public function get(): AppleAppListingsCategoriesEntityMain
 	{
 		return parent::get();
 	}

@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\BusinessDataApi\Yelp\Search;
 
 
+use DFSClientV3\Entity\Custom\YelpSearchGetResultsByTaskIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class YelpSearchGetResultsByTaskId extends AbstractModel
@@ -36,9 +37,10 @@ class YelpSearchGetResultsByTaskId extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\YelpSearchGetResultsByTaskIdEntityMain
+     * @return YelpSearchGetResultsByTaskIdEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\YelpSearchGetResultsByTaskIdEntityMain
+    #[\Override]
+    public function get(): YelpSearchGetResultsByTaskIdEntityMain
     {
         return parent::get();
     }

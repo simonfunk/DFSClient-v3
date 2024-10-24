@@ -3,6 +3,7 @@
 
 namespace DFSClientV3\Models\OnPageApi;
 
+use DFSClientV3\Entity\Custom\OnPageGetDuplicateContentEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class OnPageGetDuplicateContent extends AbstractModel
@@ -90,8 +91,9 @@ class OnPageGetDuplicateContent extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\OnPageGetDuplicateContentEntityMain;
+     * @return OnPageGetDuplicateContentEntityMain ;
      */
+    #[\Override]
     public function get()
     {
         return parent::get();

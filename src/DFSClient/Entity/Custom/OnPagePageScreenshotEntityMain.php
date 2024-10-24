@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\OnPagePageScreenshotEntityMainTasks;
 
-class OnPagePageScreenshotEntityMain extends \DFSClientV3\Models\ResponseModel 
+class OnPagePageScreenshotEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class OnPagePageScreenshotEntityMain extends \DFSClientV3\Models\ResponseModel
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\OnPagePageScreenshotEntityMainTasksResult|null
-	*/
-	public function getResultsByPostID($postID): ?\DFSClientV3\Entity\Custom\OnPagePageScreenshotEntityMainTasksResult {
+  * @return OnPagePageScreenshotEntityMainTasksResult|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?OnPagePageScreenshotEntityMainTasksResult {
 		return parent::getResultsByPostID($postID);
 	}
 }

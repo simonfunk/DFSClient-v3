@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\KeywordsForKeywordLiveGetCompletedTasksEntityMainTasks;
 
-class KeywordsForKeywordLiveGetCompletedTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class KeywordsForKeywordLiveGetCompletedTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class KeywordsForKeywordLiveGetCompletedTasksEntityMain extends \DFSClientV3\Mod
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\KeywordsForKeywordLiveGetCompletedTasksEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return KeywordsForKeywordLiveGetCompletedTasksEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

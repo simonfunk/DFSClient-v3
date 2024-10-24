@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\OnPageForceStopEntityMainTasks;
 
-class OnPageForceStopEntityMain extends \DFSClientV3\Models\ResponseModel
+class OnPageForceStopEntityMain extends ResponseModel
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class OnPageForceStopEntityMain extends \DFSClientV3\Models\ResponseModel
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\OnPageForceStopEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return OnPageForceStopEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

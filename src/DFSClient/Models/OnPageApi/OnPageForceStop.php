@@ -3,6 +3,7 @@
 
 namespace DFSClientV3\Models\OnPageApi;
 
+use DFSClientV3\Entity\Custom\OnPageForceStopEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class OnPageForceStop extends AbstractModel
@@ -26,9 +27,10 @@ class OnPageForceStop extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\OnPageForceStopEntityMain
+     * @return OnPageForceStopEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\OnPageForceStopEntityMain
+    #[\Override]
+    public function get(): OnPageForceStopEntityMain
     {
         return parent::get();
     }

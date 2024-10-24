@@ -96,9 +96,10 @@ class AppleAppListingsSearchLive extends AbstractModel {
 	}
 
 	/**
-	 * @return \DFSClientV3\Entity\Custom\AppleAppListingsSearchLiveEntityMain
-	 */
-	public function get(): AppleAppListingsSearchLiveEntityMain {
+  * @return AppleAppListingsSearchLiveEntityMain
+  */
+ #[\Override]
+ public function get(): AppleAppListingsSearchLiveEntityMain {
 		return parent::get();
 	}
 

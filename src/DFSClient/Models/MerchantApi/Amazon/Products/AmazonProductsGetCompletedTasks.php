@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\MerchantApi\Amazon\Products;
 
 
+use DFSClientV3\Entity\Custom\AmazonProductsGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AmazonProductsGetCompletedTasks extends AbstractModel
@@ -16,7 +17,8 @@ class AmazonProductsGetCompletedTasks extends AbstractModel
     /**
      * @return \DFSClientV3\Entity\Custom\AmazonProductsGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\AmazonProductsGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): AmazonProductsGetCompletedTasksEntityMain
     {
         return parent::get();
     }

@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\DataForSeoLabsApi;
 
 
+use DFSClientV3\Entity\Custom\DFSLabsCategoriesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class DFSLabsCategories extends AbstractModel
@@ -15,9 +16,10 @@ class DFSLabsCategories extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\DFSLabsCategoriesEntityMain
+     * @return DFSLabsCategoriesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\DFSLabsCategoriesEntityMain
+    #[\Override]
+    public function get(): DFSLabsCategoriesEntityMain
     {
         return parent::get();
     }

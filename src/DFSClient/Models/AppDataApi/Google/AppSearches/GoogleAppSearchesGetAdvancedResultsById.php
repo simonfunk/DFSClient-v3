@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\AppDataApi\Google\AppSearches;
 
 
+use DFSClientV3\Entity\Custom\GoogleAppSearchesGetAdvancedResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class GoogleAppSearchesGetAdvancedResultsById extends AbstractModel
@@ -25,9 +26,10 @@ class GoogleAppSearchesGetAdvancedResultsById extends AbstractModel
 	}
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\GoogleAppSearchesGetAdvancedResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\GoogleAppSearchesGetAdvancedResultsByIdEntityMain
+  * @return GoogleAppSearchesGetAdvancedResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): GoogleAppSearchesGetAdvancedResultsByIdEntityMain
 	{
 		return parent::get();
 	}

@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\DFSLabsLocationsAndLanguagesEntityMainTasks;
 
-class DFSLabsLocationsAndLanguagesEntityMain extends \DFSClientV3\Models\ResponseModel 
+class DFSLabsLocationsAndLanguagesEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class DFSLabsLocationsAndLanguagesEntityMain extends \DFSClientV3\Models\Respons
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\DFSLabsLocationsAndLanguagesEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return DFSLabsLocationsAndLanguagesEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

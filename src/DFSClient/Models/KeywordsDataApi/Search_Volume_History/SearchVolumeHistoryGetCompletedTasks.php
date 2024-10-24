@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Search_Volume_History;
 
+use DFSClientV3\Entity\Custom\SearchVolumeHistoryGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class SearchVolumeHistoryGetCompletedTasks extends AbstractModel
@@ -24,9 +25,10 @@ class SearchVolumeHistoryGetCompletedTasks extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\SearchVolumeHistoryGetCompletedTasksEntityMain
+     * @return SearchVolumeHistoryGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\SearchVolumeHistoryGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): SearchVolumeHistoryGetCompletedTasksEntityMain
     {
         return parent::get();
     }

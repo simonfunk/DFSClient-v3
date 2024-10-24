@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Ads_Traffic_By_Keywords;
 
 
+use DFSClientV3\Entity\Custom\AdsTrafficForKeywordsGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AdsTrafficForKeywordsGetCompletedTasks extends AbstractModel
@@ -25,9 +26,10 @@ class AdsTrafficForKeywordsGetCompletedTasks extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\AdsTrafficForKeywordsGetCompletedTasksEntityMain
+     * @return AdsTrafficForKeywordsGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\AdsTrafficForKeywordsGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): AdsTrafficForKeywordsGetCompletedTasksEntityMain
     {
         return parent::get();
     }

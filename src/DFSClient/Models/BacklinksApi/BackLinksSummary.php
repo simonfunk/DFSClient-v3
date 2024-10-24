@@ -100,20 +100,22 @@ class BackLinksSummary extends AbstractModel
     /**
      * @return BackLinksSummaryEntityMain
      */
+    #[\Override]
     public function get(): BackLinksSummaryEntityMain
     {
         return parent::get();
     }
 
+    #[\Override]
     protected function initCustomFunctionForPaths(): array
     {
         return [
-            'tasks->(:number)->result->(:number)->referring_links_tld' => function ($key, $value){return (array)$value;},
-            'tasks->(:number)->result->(:number)->referring_links_types' => function ($key, $value){return (array)$value;},
-            'tasks->(:number)->result->(:number)->referring_links_attributes' => function ($key, $value){return (array)$value;},
-            'tasks->(:number)->result->(:number)->referring_links_platform_types' => function ($key, $value){return (array)$value;},
-            'tasks->(:number)->result->(:number)->referring_links_semantic_locations' => function ($key, $value){return (array)$value;},
-            'tasks->(:number)->result->(:number)->referring_links_countries' => function ($key, $value){return (array)$value;}
+            'tasks->(:number)->result->(:number)->referring_links_tld' => fn($key, $value) => (array)$value,
+            'tasks->(:number)->result->(:number)->referring_links_types' => fn($key, $value) => (array)$value,
+            'tasks->(:number)->result->(:number)->referring_links_attributes' => fn($key, $value) => (array)$value,
+            'tasks->(:number)->result->(:number)->referring_links_platform_types' => fn($key, $value) => (array)$value,
+            'tasks->(:number)->result->(:number)->referring_links_semantic_locations' => fn($key, $value) => (array)$value,
+            'tasks->(:number)->result->(:number)->referring_links_countries' => fn($key, $value) => (array)$value
         ];
     }
 

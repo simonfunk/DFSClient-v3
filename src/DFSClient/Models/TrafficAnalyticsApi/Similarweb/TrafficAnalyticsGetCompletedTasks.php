@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\TrafficAnalyticsApi\Similarweb;
 
+use DFSClientV3\Entity\Custom\TrafficAnalyticsGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class TrafficAnalyticsGetCompletedTasks extends AbstractModel
@@ -13,9 +14,10 @@ class TrafficAnalyticsGetCompletedTasks extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\TrafficAnalyticsGetCompletedTasksEntityMain
+     * @return TrafficAnalyticsGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\TrafficAnalyticsGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): TrafficAnalyticsGetCompletedTasksEntityMain
     {
         return parent::get();
     }

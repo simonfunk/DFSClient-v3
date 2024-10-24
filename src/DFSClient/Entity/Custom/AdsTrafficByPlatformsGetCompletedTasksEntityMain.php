@@ -2,9 +2,10 @@
 
 namespace DFSClientV3\Entity\Custom;
 
+use DFSClientV3\Models\ResponseModel;
 use DFSClientV3\Entity\Custom\AdsTrafficByPlatformsGetCompletedTasksEntityMainTasks;
 
-class AdsTrafficByPlatformsGetCompletedTasksEntityMain extends \DFSClientV3\Models\ResponseModel 
+class AdsTrafficByPlatformsGetCompletedTasksEntityMain extends ResponseModel 
 {    
     /**
     * @var null|string $version;
@@ -48,9 +49,10 @@ class AdsTrafficByPlatformsGetCompletedTasksEntityMain extends \DFSClientV3\Mode
  
 
 	/**
-	* @return \DFSClientV3\Entity\Custom\AdsTrafficByPlatformsGetCompletedTasksEntityMainTasksResult[]|null
-	*/
-	public function getResultsByPostID($postID): ?array {
+  * @return AdsTrafficByPlatformsGetCompletedTasksEntityMainTasksResult[]|null
+  */
+ #[\Override]
+ public function getResultsByPostID($postID): ?array {
 		return parent::getResultsByPostID($postID);
 	}
 }

@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\SerpApi\Reviews;
 
 
+use DFSClientV3\Entity\Custom\ReviewsLanguagesEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class ReviewsLanguages extends AbstractModel
@@ -25,9 +26,10 @@ class ReviewsLanguages extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\ReviewsLanguagesEntityMain
+     * @return ReviewsLanguagesEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\ReviewsLanguagesEntityMain
+    #[\Override]
+    public function get(): ReviewsLanguagesEntityMain
     {
         return parent::get();
     }

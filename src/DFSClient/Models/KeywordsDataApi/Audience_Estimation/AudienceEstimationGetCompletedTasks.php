@@ -2,6 +2,7 @@
 
 namespace DFSClientV3\Models\KeywordsDataApi\Audience_Estimation;
 
+use DFSClientV3\Entity\Custom\AudienceEstimationGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AudienceEstimationGetCompletedTasks extends AbstractModel
@@ -24,9 +25,10 @@ class AudienceEstimationGetCompletedTasks extends AbstractModel
     }
 
     /**
-     * @return \DFSClientV3\Entity\Custom\AudienceEstimationGetCompletedTasksEntityMain
+     * @return AudienceEstimationGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\AudienceEstimationGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): AudienceEstimationGetCompletedTasksEntityMain
     {
         return parent::get();
     }

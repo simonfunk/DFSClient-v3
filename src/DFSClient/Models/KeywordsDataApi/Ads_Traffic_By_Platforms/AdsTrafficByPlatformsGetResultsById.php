@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Ads_Traffic_By_Platforms;
 
 
+use DFSClientV3\Entity\Custom\AdsTrafficByPlatformsGetResultsByIdEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AdsTrafficByPlatformsGetResultsById extends AbstractModel
@@ -32,9 +33,10 @@ class AdsTrafficByPlatformsGetResultsById extends AbstractModel
     }
 	
 	/**
-	 * @return \DFSClientV3\Entity\Custom\AdsTrafficByPlatformsGetResultsByIdEntityMain
-	 */
-	public function get(): \DFSClientV3\Entity\Custom\AdsTrafficByPlatformsGetResultsByIdEntityMain
+  * @return AdsTrafficByPlatformsGetResultsByIdEntityMain
+  */
+ #[\Override]
+ public function get(): AdsTrafficByPlatformsGetResultsByIdEntityMain
 	{
 		return parent::get();
 	}

@@ -3,6 +3,7 @@
 namespace DFSClientV3\Models\AppDataApi\Apple\AppList;
 
 
+use DFSClientV3\Entity\Custom\AppleAppListGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class AppleAppListGetCompletedTasks extends AbstractModel
@@ -14,9 +15,10 @@ class AppleAppListGetCompletedTasks extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\AppleAppListGetCompletedTasksEntityMain
+     * @return AppleAppListGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\AppleAppListGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): AppleAppListGetCompletedTasksEntityMain
     {
         return parent::get();
     }

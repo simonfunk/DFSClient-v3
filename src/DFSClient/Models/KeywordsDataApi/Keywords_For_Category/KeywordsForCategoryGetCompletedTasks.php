@@ -4,6 +4,7 @@
 namespace DFSClientV3\Models\KeywordsDataApi\Keywords_For_Category;
 
 
+use DFSClientV3\Entity\Custom\KeywordsForCategoryGetCompletedTasksEntityMain;
 use DFSClientV3\Models\AbstractModel;
 
 class KeywordsForCategoryGetCompletedTasks extends AbstractModel
@@ -15,9 +16,10 @@ class KeywordsForCategoryGetCompletedTasks extends AbstractModel
     protected $resultShouldBeTransformedToArray = true;
 
     /**
-     * @return \DFSClientV3\Entity\Custom\KeywordsForCategoryGetCompletedTasksEntityMain
+     * @return KeywordsForCategoryGetCompletedTasksEntityMain
      */
-    public function get(): \DFSClientV3\Entity\Custom\KeywordsForCategoryGetCompletedTasksEntityMain
+    #[\Override]
+    public function get(): KeywordsForCategoryGetCompletedTasksEntityMain
     {
         return parent::get();
     }
